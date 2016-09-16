@@ -1,0 +1,43 @@
+git config --global user.name "xxxxxx" (change name)
+git config --global user.email "xxxxxx" (change email)
+git config --list (list settings)
+git config user.email (view one setting)
+git help (help menu) / git help commit (specific setting)
+clear
+
+pwd (print working directory)
+cd ~ (change folder ~ is home)
+cd .. (back one directory)
+ls (list all folders)
+ls -la (list all hidden folders too)
+cd Bucky (e.g.)
+git init (start a repository)
+
+git add . (add all changes to the project . means folder)
+git commit -m "This is our first commit" (snapshot the point and time -m "xx" a message for informing)
+
+git log (view commit history)
+git log --author="Bucky" (show commits from Bucky)
+git status
+git add xx.txt (put it to the staging area to commit later)
+you can also add. to add several files
+
+git diff (show the differences from before)
+git diff --staged (differences between staging area and repository)
+git rm xx.txt (remove a file)
+git commit -m "a file deleted" (pls commit after deleting)
+git mv xx.txt xxx.txt (rename a file literally move it)
+git mv xx.txt LoveNotes/xxxx.txt (move to a folder)
+
+make a repository for a file to work on
+git commit -am "Updated already 1st version" (directly commmit)
+git checkout -- index.html (take something from repository to your working copy)
+git reset HEAD xxxx.html (take something from staging area back)
+git checkout 01e7dba -- index.html (go to commit number/version number and take index file)
+
+copy the github address
+set a remote (connection between your pc and github)
+git remote add <nickname> <url/address> (above)
+git remote (show your remote nickname)
+git push -u <nickname> master (to online server)
+git pull <nickname> master (update your repo)
