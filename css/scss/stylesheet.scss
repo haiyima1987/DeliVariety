@@ -1,6 +1,6 @@
-@import 'base/_variables.scss';
-@import 'base/_base.scss';
-@import 'base/_mixins.scss';
+@import '_base_variables.scss';
+@import '_base_outline.scss';
+@import '_base_mixins.scss';
 
-@import 'layout/_main_page.scss';
-@import 'layout/_big_menu.scss';
+@import '_layout_main_page.scss';
+@import '_layout_big_menu.scss';

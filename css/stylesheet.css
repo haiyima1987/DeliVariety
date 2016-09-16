@@ -1,3 +1,8 @@
+/*
+* {
+    border: 1px dashed black;
+}
+*/
 html, body {
   margin: 0;
   padding: 0; }
@@ -12,6 +17,7 @@ p {
   margin: 0;
   padding: 0; }
 
+/*background shaper*/
 #header {
   position: relative;
   background: url(../img/background_full.png) no-repeat;
@@ -26,66 +32,78 @@ p {
     width: 100%;
     height: 100%; }
 
+/*banner and menu*/
 #banner {
   background-color: #1a1a1a;
   opacity: 0.8;
   height: 18%; }
-  #banner #logoMenu #logo {
-    width: 30%;
-    display: inline-block; }
-  #banner #logoMenu i {
-    margin-top: 10px;
-    font-size: 1.5em;
-    color: #efefef; }
-  #banner #logoMenu #btnMenu {
-    background-color: transparent;
-    border-style: none;
-    margin-top: 10px;
-    margin-left: 10px;
-    color: #efefef;
-    font-size: 1.5em; }
-  #banner .navbar {
-    margin-top: 30px;
-    padding-left: 0;
-    text-align: center;
-    visibility: hidden; }
-    #banner .navbar li {
-      list-style: none;
-      margin: 10px;
-      padding: 5px; }
-      #banner .navbar li a {
-        color: #dedede;
-        font: 1.5em Verdana, Geneva, Tahoma, sans-serif; }
-  #banner .btnRegister a {
+
+#logoMenu img {
+  width: 35%;
+  display: inline-block; }
+#logoMenu i {
+  vertical-align: middle;
+  font-size: 2.5em;
+  color: #efefef; }
+#logoMenu #btnMenu {
+  background-color: transparent;
+  border-style: none;
+  vertical-align: middle;
+  margin-left: 20px;
+  color: #efefef;
+  font-size: 1.8em; }
+
+.navbar {
+  margin-top: 30px;
+  padding-left: 0;
+  text-align: center;
+  visibility: hidden; }
+  .navbar li {
+    list-style: none;
+    margin: 10px;
+    padding: 5px; }
+    .navbar li a {
+      color: #dedede;
+      font: 1.5em Verdana, Geneva, Tahoma, sans-serif; }
+
+.btnRegister {
+  position: absolute;
+  right: 0;
+  bottom: 85%; }
+  .btnRegister a {
+    display: inline-block;
+    height: 40px;
+    width: 120px;
+    margin: 20px auto auto 10px;
+    padding: 8px;
+    font: 1.3em Verdana, Geneva, Tahoma, sans-serif;
     color: #dedede;
     text-decoration: none;
-    text-align: center; }
-  #banner .btnRegister button {
-    background-color: transparent;
-    border: 1px solid #efefef;
-    margin: 20px auto auto 10px;
-    padding: 5px;
-    color: #efefef;
-    width: 120px;
-    height: 40px;
-    font: 1.2em Verdana, Geneva, Tahoma, sans-serif; }
+    text-align: center;
+    border: 1px solid #efefef; }
 
+/*main eye catching text and button*/
 #mainText h1, #mainText h3 {
   color: #dedede;
   text-align: right; }
+#mainText #introText {
+  position: absolute;
+  top: 55%;
+  right: 45%; }
 .btnGreen a {
-  color: #dedede;
-  text-decoration: none;
-  text-align: center; }
-.btnGreen button {
-  position: relative;
-  top: 30px;
+  display: block;
+  width: 240px;
+  height: 45px;
   background: #7ac943;
   border: 2px solid #efefef;
   text-align: center;
   padding: 10px;
   font: 1.2em Verdana, Geneva, Tahoma, sans-serif;
   color: #efefef; }
+#mainText #btnOrder {
+  position: absolute;
+  top: 75%;
+  left: 60%; }
 
 #secondary {
   position: relative;
@@ -95,59 +113,88 @@ p {
   text-align: center; }
   #secondary #secondaryText {
     position: absolute;
-    top: 60px; }
+    top: 22%; }
     #secondary #secondaryText h3 {
       color: #7ac943;
       font: bold Verdana, Geneva, Tahoma, sans-serif; }
     #secondary #secondaryText p {
       margin-top: 10px;
       font: bold Verdana, Geneva, Tahoma, sans-serif; }
-  #secondary #btnLocation {
-    position: relative;
-    top: 20px; }
+  #secondary #btnLocation a {
+    margin: 1% auto; }
 
-#menuWrap .bigMenuItem {
-  padding: 12px 6px 12px 6px;
+#menuWarp :first-child {
+  border-left: 12px solid #ffffff; }
+#menuWarp :last-child {
+  border-right: 12px solid #ffffff; }
+
+.bigMenuItem {
+  height: 300px;
+  padding: 0;
+  border-width: 12px 6px;
+  border-style: solid;
+  border-color: #ffffff;
   position: relative; }
-  #menuWrap .bigMenuItem a {
-    height: 100%;
+  .bigMenuItem img {
     width: 100%;
-    text-align: center; }
-    #menuWrap .bigMenuItem a img {
-      width: 100%; }
-    #menuWrap .bigMenuItem a h2 {
-      position: relative;
-      bottom: 180px;
+    height: 100%; }
+  .bigMenuItem .bigMenuText {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    left: 0; }
+    .bigMenuItem .bigMenuText h2 {
       padding: 10px;
       font: bold 2em Verdana, Geneva, Tahoma, sans-serif;
       color: #7ac943; }
 
 #newsletter {
-  text-align: center; }
+  text-align: center;
+  margin-top: 40px; }
   #newsletter h3 {
     color: #7ac943;
     font-style: "brandon-grotesque", Helvetica, sans-serif; }
+  #newsletter input[type=email] {
+    height: 35px; }
+  #newsletter input[type=submit] {
+    width: 100px;
+    height: 35px;
+    background: #7ac943;
+    border: 2px solid #efefef;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #efefef; }
 
 #bottom {
   margin-top: 50px;
   background-color: #1a1a1a;
   text-align: center; }
-  #bottom #social {
-    margin-top: 30px;
-    padding: 20px; }
-    #bottom #social img {
-      width: 4%; }
-      #bottom #social img :hover {
-        -moz-transform: scale(-1, 1);
-        -o-transform: scale(-1, 1);
-        -ms-transform: scale(-1, 1);
-        -webkit-transform: scale(-1, 1);
-        transform: scale(-1, 1); }
-  #bottom p {
+
+#social {
+  margin-top: 30px;
+  padding: 20px; }
+  #social .follow {
+    margin: 0 5px 0 5px;
+    display: inline; }
+    #social .follow img {
+      width: 3%;
+      transition: all 0.2s ease-in-out; }
+    #social .follow :hover {
+      -moz-transform: scale(-1, 1);
+      -o-transform: scale(-1, 1);
+      -ms-transform: scale(-1, 1);
+      -webkit-transform: scale(-1, 1);
+      transform: scale(-1, 1); }
+  #social p {
     margin: 0;
     padding: 10px;
     color: #dedede; }
-  #bottom #copyright {
-    background-color: #7ac943; }
+
+#copyright {
+  background-color: #7ac943; }
+  #copyright p {
+    margin: 0;
+    padding: 10px;
+    color: #1a1a1a; }
 
 /*# sourceMappingURL=stylesheet.css.map */
