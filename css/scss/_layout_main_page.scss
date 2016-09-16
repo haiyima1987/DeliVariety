@@ -1,4 +1,4 @@
-/*background shaper*/
+/*background of the header*/
 #header {
     position: relative;
     background: url(../img/background_full.png) no-repeat;
@@ -15,19 +15,40 @@
     }
 }
 
-/*banner and menu*/
+/*background of other headers*/
+#otherHeader {
+    @extend #header;
+    background: url(../img/restaurant_overview.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    h5 {
+        @include position(relative, $left: 20%, $top: 30%);
+        font: bold 1.8em Verdana, Geneva, Tahoma, sans-serif;
+        color: $main-green;
+    }
+}
+
+/*banner*/
 #banner {
     background-color: $main-dark-grey;
     opacity: 0.8;
     height: 18%;
 }
-       
+
+/*other banners*/
+#otherBanner {
+    @extend #banner;
+    height: 34%;
+}
+
+/*menu button and logo*/
 #logoMenu {
     img {
         width: 35%;
         display: inline-block;
     }
     i {
+        margin-left: 30px;
         vertical-align: middle;
         font-size: 2.5em;
         color: $clear-white;
@@ -36,17 +57,17 @@
         background-color: transparent;
         border-style: none;
         vertical-align: middle;
-        margin-left: 20px;
         color: $clear-white;
         font-size: 1.8em;
     }
 }
 
+/*navbar inside the menu*/
 .navbar {
     margin-top: 30px;
     padding-left: 0;
     text-align: center;
-    visibility: hidden;
+    display: none;
     li {
         list-style: none;
         margin: 10px;
@@ -58,6 +79,7 @@
     }
 }
 
+/*register buttons*/
 .btnRegister {
     @include position(absolute, $bottom: 85%, $right: 0);
     a {
@@ -74,7 +96,13 @@
     }
 }
 
-/*main eye catching text and button*/
+/*register buttons other than home page*/
+.btnOtherRegister {
+    @extend .btnRegister;
+    @include position(absolute, $top: 5%, $right: 0);
+}
+
+/*main page eye catching text and button*/
 #mainText {
     h1, h3 {
         color: $text-white;
@@ -101,6 +129,7 @@
     }
 }
 
+/*view locatin content*/
 #secondary {
     position: relative;
     background: url(../img/background_texture.png) no-repeat center;
@@ -120,7 +149,7 @@
     }
     #btnLocation {
         a {
-            margin: 1% auto;
+            margin: 4% auto;
         }
     }
 }

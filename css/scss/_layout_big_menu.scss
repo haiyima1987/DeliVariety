@@ -1,3 +1,4 @@
+/*3 big menu elements below view location*/
 #menuWarp {
     :first-child {
         border-left: 12px solid $white;
@@ -7,6 +8,7 @@
     }
 }
 
+/*big menu items*/
 .bigMenuItem {
     height: 300px;
     padding: 0;
@@ -24,10 +26,53 @@
             padding: 10px;
             font: bold 2em Verdana, Geneva, Tahoma, sans-serif;
             color: $main-green;
+            background: $overlay-grey;
+            @include box-shadow(0, 0, 50px, $main-dark-grey);
         }
     }
 }
 
+/*menu content*/
+#contentWrapper {
+    background: url(../img/background_texture.png) repeat;
+    #content {
+        width: 90%;
+        margin: 5% auto 0 auto
+    }
+}
+
+/*menu category and each menu item*/
+.menuCategory {
+    margin: 2% 0 0 0;
+    p {
+        background: $main-green;
+        height: 30px;
+        padding-top: 4px;
+        margin: 0;
+        color: $white;
+    }
+    .menuItem {
+        padding: 2px;
+        border: 2px solid $clear-white;
+        img {
+            width: 100%;
+        }
+        .btnItemOrder {
+            @include position(absolute, $right: 0, $bottom: 24px);
+            background-color: $main-green;
+            border: 1px solid $white;
+            color: $clear-white;
+        }
+        p {
+            background: transparent;
+            height: 24px;
+            color: $main-dark-grey;
+            padding: 0;
+        }
+    }
+}
+
+/*newsletter content below big menu buttons*/
 #newsletter {
     text-align: center;
     margin-top: 40px;
@@ -37,6 +82,7 @@
     }
     input[type=email] {
         height: 35px;
+        width: 300px;
     }
     input[type=submit] {
         width: 100px;
@@ -49,6 +95,7 @@
     }
 }
 
+/*footer etc.*/
 #bottom {
     margin-top: 50px;
     background-color: $main-dark-grey;
@@ -63,7 +110,7 @@
         display: inline;
         img {
             width: 3%;
-            transition: all 0.2s ease-in-out;
+            @include transition(all, 0.2s, ease-in-out);
         }
         :hover {
             @include scale(-1, 1);
