@@ -94,7 +94,7 @@
   margin-top: 40px;
   h3 {
     color: $main-green;
-    font-style: "brandon-grotesque", Helvetica, sans-serif;
+    font-family: "brandon-grotesque", Helvetica, sans-serif;
   }
   input[type=email] {
     height: 35px;
@@ -147,4 +147,52 @@
     padding: 10px;
     color: $main-dark-grey;
   }
+}
+
+/*overlay for javascript and jquery*/
+#overlay {
+  background: $main-dark-grey;
+  opacity: 0.9;
+  @include position(fixed, $top: 0, $right: 0, $bottom: 0, $left: 0);
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  .btnClose {
+    font-size: 400%;
+    color: $white;
+    text-align: center;
+    margin-top: 40px;
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  /*navbar inside the menu*/
+  .navbar {
+    margin-top: 60px;
+    padding-left: 0;
+    text-align: center;
+    //display: none;
+    li {
+      list-style: none;
+      margin: 10px;
+      padding: 5px;
+      a {
+        color: $text-white;
+        font: 1.5em Verdana, Geneva, Tahoma, sans-serif;
+      }
+    }
+  }
+
+  /*overlay buttons*/
+  .btnRegOverlay {
+    @extend .btnRegister;
+    position: static;
+    text-align: center;
+  }
+}
+
+.noScroll {
+  overflow: hidden;
 }

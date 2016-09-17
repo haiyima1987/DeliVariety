@@ -1,9 +1,8 @@
 /*background of the header*/
 #header {
   position: relative;
-  background: url(../img/background_full.png) no-repeat;
+  background: url(../img/background_full.png) no-repeat center;
   background-size: cover;
-  background-position: center;
   @at-root .shape {
     vertical-align: top;
     width: 100%;
@@ -18,9 +17,8 @@
 /*background of other headers*/
 #otherHeader {
   @extend #header;
-  background: url(../img/restaurant_overview.png) no-repeat;
+  background: url(../img/restaurant_overview.png) no-repeat center;
   background-size: cover;
-  background-position: center;
   h5 {
     @include position(relative, $left: 20%, $top: 30%);
     font: bold 1.8em Verdana, Geneva, Tahoma, sans-serif;
@@ -29,15 +27,16 @@
 }
 
 /*banner*/
-#banner {
+.banner {
   background-color: $main-dark-grey;
   opacity: 0.8;
   height: 18%;
+  position: relative;
 }
 
 /*other banners*/
-#otherBanner {
-  @extend #banner;
+.otherBanner {
+  @extend .banner;
   height: 34%;
 }
 
@@ -62,29 +61,15 @@
       color: $clear-white;
       font-size: 1.8em;
     }
-  }
-}
-
-/*navbar inside the menu*/
-.navbar {
-  margin-top: 30px;
-  padding-left: 0;
-  text-align: center;
-  display: none;
-  li {
-    list-style: none;
-    margin: 10px;
-    padding: 5px;
-    a {
-      color: $text-white;
-      font: 1.5em Verdana, Geneva, Tahoma, sans-serif;
+    :hover {
+      cursor: pointer;
     }
   }
 }
 
 /*register buttons*/
 .btnRegister {
-  @include position(absolute, $bottom: 85%, $right: 0);
+  @include position(absolute, $top: 20%, $right: 0);
   a {
     display: inline-block; // block elements have sizes;
     height: 40px;
@@ -137,13 +122,12 @@
   position: relative;
   background: url(../img/background_texture.png) no-repeat center;
   background-size: cover;
-  background-position: center;
   text-align: center;
   #secondaryText {
     @include position(absolute, $top: 22%);
     h3 {
       color: $main-green;
-      font: bold 1em Verdana, Geneva, Tahoma, sans-serif;
+      font: bold 1.8em Verdana, Geneva, Tahoma, sans-serif;
     }
     p {
       margin-top: 10px;
