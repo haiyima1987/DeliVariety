@@ -1,6 +1,6 @@
-/** {
-    border: 1px dashed black;
-}*/
+* {
+  border: 1px dashed black; }
+
 html, body {
   margin: 0;
   padding: 0; }
@@ -21,7 +21,7 @@ p {
   background: url(../img/background_full.png) no-repeat;
   background-size: cover;
   background-position: center; }
-  #header #shaper, #otherHeader #shaper {
+  .shape {
     vertical-align: top;
     width: 100%; }
   .bgCanvas {
@@ -128,7 +128,7 @@ p {
 #mainText #btnOrder {
   position: absolute;
   top: 75%;
-  left: 60%; }
+  right: 0; }
 
 /*view locatin content*/
 #secondary {
@@ -142,10 +142,10 @@ p {
     top: 22%; }
     #secondary #secondaryText h3 {
       color: #7ac943;
-      font: bold Verdana, Geneva, Tahoma, sans-serif; }
+      font: bold 1em Verdana, Geneva, Tahoma, sans-serif; }
     #secondary #secondaryText p {
       margin-top: 10px;
-      font: bold Verdana, Geneva, Tahoma, sans-serif; }
+      font: bold 1em Verdana, Geneva, Tahoma, sans-serif; }
   #secondary #btnLocation a {
     margin: 4% auto; }
 

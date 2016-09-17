@@ -1,158 +1,158 @@
 /*background of the header*/
 #header {
-    position: relative;
-    background: url(../img/background_full.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    #shaper {
-        vertical-align: top;
-        width: 100%;
-    }
-    @at-root .bgCanvas {
-        @include position(absolute, $top: 0);
-        width: 100%;
-        height: 100%;
-    }
+  position: relative;
+  background: url(../img/background_full.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  @at-root .shape {
+    vertical-align: top;
+    width: 100%;
+  }
+  @at-root .bgCanvas {
+    @include position(absolute, $top: 0);
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /*background of other headers*/
 #otherHeader {
-    @extend #header;
-    background: url(../img/restaurant_overview.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    h5 {
-        @include position(relative, $left: 20%, $top: 30%);
-        font: bold 1.8em Verdana, Geneva, Tahoma, sans-serif;
-        color: $main-green;
-    }
+  @extend #header;
+  background: url(../img/restaurant_overview.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  h5 {
+    @include position(relative, $left: 20%, $top: 30%);
+    font: bold 1.8em Verdana, Geneva, Tahoma, sans-serif;
+    color: $main-green;
+  }
 }
 
 /*banner*/
 #banner {
-    background-color: $main-dark-grey;
-    opacity: 0.8;
-    height: 18%;
+  background-color: $main-dark-grey;
+  opacity: 0.8;
+  height: 18%;
 }
 
 /*other banners*/
 #otherBanner {
-    @extend #banner;
-    height: 34%;
+  @extend #banner;
+  height: 34%;
 }
 
 /*menu button and logo*/
 #logoMenu {
-    img {
-        width: 35%;
-        display: inline-block;
+  img {
+    width: 35%;
+    display: inline-block;
+  }
+  #btnMenu {
+    display: inline;
+    i {
+      margin-left: 30px;
+      vertical-align: middle;
+      font-size: 2.5em;
+      color: $clear-white;
     }
-    #btnMenu {
-        display: inline;
-        i {
-            margin-left: 30px;
-            vertical-align: middle;
-            font-size: 2.5em;
-            color: $clear-white;
-        }
-        #labelMenu {
-            background-color: transparent;
-            border-style: none;
-            vertical-align: middle;
-            color: $clear-white;
-            font-size: 1.8em;
-        }
+    #labelMenu {
+      background-color: transparent;
+      border-style: none;
+      vertical-align: middle;
+      color: $clear-white;
+      font-size: 1.8em;
     }
+  }
 }
 
 /*navbar inside the menu*/
 .navbar {
-    margin-top: 30px;
-    padding-left: 0;
-    text-align: center;
-    display: none;
-    li {
-        list-style: none;
-        margin: 10px;
-        padding: 5px;
-        a {
-            color: $text-white;
-            font: 1.5em Verdana, Geneva, Tahoma, sans-serif;
-        }
+  margin-top: 30px;
+  padding-left: 0;
+  text-align: center;
+  display: none;
+  li {
+    list-style: none;
+    margin: 10px;
+    padding: 5px;
+    a {
+      color: $text-white;
+      font: 1.5em Verdana, Geneva, Tahoma, sans-serif;
     }
+  }
 }
 
 /*register buttons*/
 .btnRegister {
-    @include position(absolute, $bottom: 85%, $right: 0);
-    a {
-        display: inline-block; // block elements have sizes;
-        height: 40px;
-        width: 120px;
-        margin: 20px auto auto 10px;
-        padding: 8px;
-        font: 1.3em Verdana, Geneva, Tahoma, sans-serif;
-        color: $text-white;
-        text-decoration: none;
-        text-align: center;
-        border: 1px solid $clear-white;
-    }
+  @include position(absolute, $bottom: 85%, $right: 0);
+  a {
+    display: inline-block; // block elements have sizes;
+    height: 40px;
+    width: 120px;
+    margin: 20px auto auto 10px;
+    padding: 8px;
+    font: 1.3em Verdana, Geneva, Tahoma, sans-serif;
+    color: $text-white;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid $clear-white;
+  }
 }
 
 /*register buttons other than home page*/
 .btnOtherRegister {
-    @extend .btnRegister;
-    @include position(absolute, $top: 5%, $right: 0);
+  @extend .btnRegister;
+  @include position(absolute, $top: 5%, $right: 0);
 }
 
 /*main page eye catching text and button*/
 #mainText {
-    h1, h3 {
-        color: $text-white;
-        text-align: right;
+  h1, h3 {
+    color: $text-white;
+    text-align: right;
+  }
+  #introText {
+    @include position(absolute, $top: 55%, $right: 45%);
+  }
+  @at-root .btnGreen {
+    a {
+      display: block;
+      width: 240px;
+      height: 45px;
+      background: $main-green;
+      border: 2px solid $clear-white;
+      text-align: center;
+      padding: 10px;
+      font: 1.2em Verdana, Geneva, Tahoma, sans-serif;
+      color: $clear-white;
     }
-    #introText {
-        @include position(absolute, $top: 55%, $right: 45%);
-    }
-    @at-root .btnGreen {
-        a {
-            display: block;
-            width: 240px;
-            height: 45px;
-            background: $main-green;
-            border: 2px solid $clear-white;
-            text-align: center;
-            padding: 10px;
-            font: 1.2em Verdana, Geneva, Tahoma, sans-serif;
-            color: $clear-white;
-        }
-    }
-    #btnOrder {
-        @include position(absolute, $top: 75%, $left: 60%);
-    }
+  }
+  #btnOrder {
+    @include position(absolute, $top: 75%, $right: 0);
+  }
 }
 
 /*view locatin content*/
 #secondary {
-    position: relative;
-    background: url(../img/background_texture.png) no-repeat center;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    #secondaryText {
-        @include position(absolute, $top: 22%);
-        h3 {
-            color: $main-green;
-            font: bold Verdana, Geneva, Tahoma, sans-serif;
-        }
-        p {
-            margin-top: 10px;
-            font: bold Verdana, Geneva, Tahoma, sans-serif;
-        }
+  position: relative;
+  background: url(../img/background_texture.png) no-repeat center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  #secondaryText {
+    @include position(absolute, $top: 22%);
+    h3 {
+      color: $main-green;
+      font: bold 1em Verdana, Geneva, Tahoma, sans-serif;
     }
-    #btnLocation {
-        a {
-            margin: 4% auto;
-        }
+    p {
+      margin-top: 10px;
+      font: bold 1em Verdana, Geneva, Tahoma, sans-serif;
     }
+  }
+  #btnLocation {
+    a {
+      margin: 4% auto;
+    }
+  }
 }
