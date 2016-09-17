@@ -1,6 +1,6 @@
-* {
-  border: 1px dashed black; }
-
+/** {
+    border: 1px dashed black;
+}*/
 html, body {
   margin: 0;
   padding: 0; }
@@ -56,17 +56,19 @@ p {
 #logoMenu img {
   width: 35%;
   display: inline-block; }
-#logoMenu i {
-  margin-left: 30px;
-  vertical-align: middle;
-  font-size: 2.5em;
-  color: #efefef; }
 #logoMenu #btnMenu {
-  background-color: transparent;
-  border-style: none;
-  vertical-align: middle;
-  color: #efefef;
-  font-size: 1.8em; }
+  display: inline; }
+  #logoMenu #btnMenu i {
+    margin-left: 30px;
+    vertical-align: middle;
+    font-size: 2.5em;
+    color: #efefef; }
+  #logoMenu #btnMenu #labelMenu {
+    background-color: transparent;
+    border-style: none;
+    vertical-align: middle;
+    color: #efefef;
+    font-size: 1.8em; }
 
 /*navbar inside the menu*/
 .navbar {
@@ -147,7 +149,7 @@ p {
   #secondary #btnLocation a {
     margin: 4% auto; }
 
-/*3 big menu elements below view location*/
+/*3 big block elements below view location button*/
 #menuWarp :first-child {
   border-left: 12px solid #ffffff; }
 #menuWarp :last-child {
@@ -181,40 +183,53 @@ p {
 
 /*menu content*/
 #contentWrapper {
-  background: url(../img/background_texture.png) repeat; }
+  background: url(../img/background_texture.png) repeat;
+  padding: 20px; }
   #contentWrapper #content {
     width: 90%;
-    margin: 5% auto 0 auto; }
+    margin: 0 auto; }
 
 /*menu category and each menu item*/
 .menuCategory {
-  margin: 2% 0 0 0; }
+  margin: 2% 0 0 0;
+  border: 2px solid #7ac943; }
   .menuCategory p {
     background: #7ac943;
-    height: 30px;
-    padding-top: 4px;
+    padding: 10px 10px 10px 16px;
+    text-align: left;
+    font-size: 1.4em;
     margin: 0;
     color: #ffffff; }
   .menuCategory .menuItem {
-    padding: 2px;
-    border: 2px solid #efefef; }
+    padding: 2px; }
     .menuCategory .menuItem img {
       width: 100%; }
     .menuCategory .menuItem .btnItemOrder {
       position: absolute;
       right: 0;
-      bottom: 24px;
+      bottom: 25px;
       background-color: #7ac943;
       border: 1px solid #ffffff;
       color: #efefef; }
     .menuCategory .menuItem p {
       background: transparent;
       height: 24px;
+      text-align: center;
       color: #1a1a1a;
       padding: 0; }
 
+.darkMenuBar {
+  border: 2px solid #3a3a3a; }
+  .darkMenuBar > p {
+    background: #3a3a3a; }
+
+/*signUpForm*/
+.signUpForm {
+  padding: 50px; }
+
 /*newsletter content below big menu buttons*/
 #newsletter {
+  clear: left;
   text-align: center;
   margin-top: 40px; }
   #newsletter h3 {
@@ -234,6 +249,7 @@ p {
 
 /*footer etc.*/
 #bottom {
+  clear: left;
   margin-top: 50px;
   background-color: #1a1a1a;
   text-align: center; }

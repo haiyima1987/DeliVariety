@@ -1,4 +1,4 @@
-/*3 big menu elements below view location*/
+/*3 big block elements below view location button*/
 #menuWarp {
     :first-child {
         border-left: 12px solid $white;
@@ -35,30 +35,32 @@
 /*menu content*/
 #contentWrapper {
     background: url(../img/background_texture.png) repeat;
+    padding: 20px;
     #content {
         width: 90%;
-        margin: 5% auto 0 auto
+        margin: 0 auto;
     }
 }
 
 /*menu category and each menu item*/
 .menuCategory {
     margin: 2% 0 0 0;
+    border: 2px solid $main-green;
     p {
         background: $main-green;
-        height: 30px;
-        padding-top: 4px;
+        padding: 10px 10px 10px 16px;
+        text-align: left;
+        font-size: 1.4em;
         margin: 0;
         color: $white;
     }
     .menuItem {
         padding: 2px;
-        border: 2px solid $clear-white;
         img {
             width: 100%;
         }
         .btnItemOrder {
-            @include position(absolute, $right: 0, $bottom: 24px);
+            @include position(absolute, $right: 0, $bottom: 25px);
             background-color: $main-green;
             border: 1px solid $white;
             color: $clear-white;
@@ -66,14 +68,28 @@
         p {
             background: transparent;
             height: 24px;
+            text-align: center;
             color: $main-dark-grey;
             padding: 0;
         }
     }
 }
 
+.darkMenuBar {
+    border: 2px solid $light-dark-grey;
+    > p {
+        background: $light-dark-grey;
+    }
+}
+
+/*signUpForm*/
+.signUpForm {
+    padding: 50px;
+}
+
 /*newsletter content below big menu buttons*/
 #newsletter {
+    clear: left;
     text-align: center;
     margin-top: 40px;
     h3 {
@@ -97,6 +113,7 @@
 
 /*footer etc.*/
 #bottom {
+    clear: left;
     margin-top: 50px;
     background-color: $main-dark-grey;
     text-align: center;
