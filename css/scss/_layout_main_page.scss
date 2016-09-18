@@ -20,8 +20,9 @@
   background: url(../img/restaurant_overview.png) no-repeat center;
   background-size: cover;
   h5 {
-    @include position(relative, $left: 20%, $top: 30%);
-    font: bold 1.8em Verdana, Geneva, Tahoma, sans-serif;
+    @include position(relative, $left: 50%, $top: 20%);
+    width: 40%;
+    font: bold 2em Verdana, Geneva, Tahoma, sans-serif;
     color: $main-green;
   }
 }
@@ -124,7 +125,7 @@
   background-size: cover;
   text-align: center;
   #secondaryText {
-    @include position(absolute, $top: 22%);
+    @include position(absolute, $top: 16%);
     h3 {
       color: $main-green;
       font: bold 1.8em Verdana, Geneva, Tahoma, sans-serif;

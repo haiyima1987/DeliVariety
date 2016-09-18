@@ -1,20 +1,3 @@
-// show the menu and banner
-// function toggle() {
-//     var $bgMenu = document.getElementById("banner");
-//     var $menuList = document.getElementsByClassName("navbar")[0];
-//
-//     if ($bgMenu.className == "banner row") {
-//         $bgMenu.className = "fullBanner";
-//         $menuList.style.display = "block";
-//     }
-//     else {
-//         $bgMenu.className = "banner row";
-//         $menuList.style.display = "none";
-//     }
-// }
-//
-// document.getElementById("btnMenu").addEventListener("click", toggle);
-
 $(document).ready(function () {
 
     var $bgMenu = $("#btnMenu");
