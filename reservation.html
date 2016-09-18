@@ -3,66 +3,108 @@
 
 <head>
     <title>DeliVariety - Reservations</title>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/stylesheet.css" rel="stylesheet">
-
-    <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 </head>
     
 <body>
-    <div id="banner">
-        <img src="img/logo.png" alt="" id="logo">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-        <button type="button">MENU</button>
-        <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Food Menu</a></li>
-            <li><a href="reservation.html">Reservation</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="signuplogin.html"><button type="button">Sign Up</button></a>
-        <a href="signuplogin.html"><button type="button">Log In</button></a>
+   <div id="otherHeader">
+        <img class="shape" src="img/restaurant_overview_shape.png" alt="shape">
+        <div class="bgCanvas">
+            <div id="otherBanner" class="otherBanner row">
+                <div id="logoMenu" class="col-md-4">
+                    <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+                    <div id="btnMenu">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        <button id="labelMenu" type="button">MENU</button>
+                    </div>
+                </div>
+                <div class="btnRegister col-md-4 pull-right">
+                    <a href="registration.html">Sign Up</a>
+                    <a href="login.html">Log In</a>
+                </div>
+            </div>
+            <h5>RESERVATIONS</h5>
+        </div>
     </div>
     
-    <div id="primary">
-        <h1>Reservation</h1>
+    <div id="contentWrapper">
+        <div id="reservationsContent">
+            <div id="topDownMap">
+                <img src="img/reservation_zoom.jpg" alt="" id="tempMapRestaurant">
+                <p>Temporary until proper image can be added.</p>
+            </div>
+            
+            <div id="SideBar">
+                <div id="calendar">
+                    <form>
+                        <label>Date:</label>
+                        <input type="date" name="dateReservation"><br>
+                    </form>
+                </div>
+                <div id="timeSelect">
+                    <form>
+                        <label>Time:</label>
+                        <input type="time" name="timeReservation" size="20"><br>
+                    </form>
+                </div>
+                <div id="clientInfo">
+                    <form>
+                        <label>Phone number:</label> 
+                        <input type="text" name="phone"><br>
+                        <label>Email address:</label> 
+                        <input type="text" name="email"><br>
+                    </form>
+                </div>
+                <div id="submit">
+                    <form>
+                        <input type="submit" class="btn btn-default" value="Make reservation">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     
-    <div id="resterauntMap">
-        <img src="img/reservation_zoom.jpg" alt="" id="tempMapRestaurant">
-        <p>Temporary until proper image can be added.</p>
-    </div>
-    
-    <div id="calendar"></div>
-        <form>
-            Date
-            <input type="date" name="dateReservation"><br>
-        </form>
-    <div id="timeSelect"></div>
-        <form>
-            Time <input type="time" name="timeReservation"><br>
-        </form>
-    <div id="clientInfo">
-        <form>
-            Phone number: <input type="text" name="phone"><br>
-            Email address: <input type="text" name="email"><br>
-            <input type="submit" value="MAKE RESERVATION">
-        </form>
-    </div>
-    
+    <!--Insert footer here-->
     <div id="bottom">
         <div id="social">
-            <img src="img/logo_facebook.png" alt="facebook">
-            <img src="img/logo_instagram.png" alt="instagram">
-            <img src="img/logo_twitter.png" alt="twitter">
+            <div class="follow"><img src="img/logo_facebook.png" alt="facebook"></div>
+            <div class="follow"><img src="img/logo_instagram.png" alt="instagram"></div>
+            <div class="follow"><img src="img/logo_twitter.png" alt="twitter"></div>
             <p>You are always welcomed to join us and follow us to get the latest offers</p>
         </div>
         <div id="copyright">
-            <p>© Varietaurant Food & Catering. All Rights Reserved.</p>
+            <p>© DeliVariety Food & Catering. All Rights Reserved.</p>
         </div>
     </div>
+
+    <!--overlay for the menu-->
+    <div id="overlay">
+        <div class="btnClose col-md-4">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-4">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Food Menu</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="btnRegOverlay">
+                <a href="registration.html">Sign Up</a>
+                <a href="login.html">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
+    <script src="js/main.js"></script>
     
 </body>

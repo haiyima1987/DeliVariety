@@ -209,6 +209,62 @@ p {
   .darkMenuBar > p {
     background: #3a3a3a; }
 
+/*contact page*/
+#contentContact{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+}
+    
+#contactInfo {
+    width: 400px;
+    float: right;
+}
+#contactInfo p,h3{
+    text-align: left;
+    padding: 5px 40px;
+    margin: 0;
+}
+#contactInfo img{
+    width: 15%;
+}
+#contactInfo .socialLink{
+    display: flex;
+}
+#contactInfo .socialLink p{
+    width: 140px;
+}
+#google-map{
+    flex: 1;
+}
+
+/*reservation page*/
+#reservationsContent{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+}
+#topDownMap{
+    flex: 1;
+}
+#topDownMap img{
+    position: relative;
+}
+#topDownMap p{
+    position: relative;
+    bottom: 50px;
+}
+#reservationsContent #SideBar{
+    width: 400px;
+    float: right;
+}
+#reservationsContent #SideBar form{
+    padding: 20px 40px;
+}
+#reservationsContent #SideBar input{
+    float: right;
+}
+
 /*signUpForm*/
 .signUpForm {
   padding: 50px; }
