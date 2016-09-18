@@ -1,76 +1,123 @@
 <!DOCTYPE html>
 <head>
     <title>DeliVariety - Contact</title>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/stylesheet.css" rel="stylesheet">
-
-    <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 </head>
 
 <body>
-    <div id="banner">
-        <img src="img/logo.png" alt="" id="logo">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-        <button type="button">MENU</button>
-        <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Food Menu</a></li>
-            <li><a href="reservation.html">Reservation</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="signuplogin.html"><button type="button">Sign Up</button></a>
-        <a href="signuplogin.html"><button type="button">Log In</button></a>
-    </div>
-    
-    <img width="100%" src="img/restaurant_overview.png" />
-    <a href="">Constact</a>
-    
-    <!--Start Google map-->
-    <div id="map">
-        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-        <div style='overflow:hidden;height:440px;width:700px;'>
-        <div id='gmap_canvas' style='height:440px;width:700px;'></div>
-            <div>
-                <small>
-                    <a href="https://www.amazon.com/Pawhut-Outdoor-Guinea-Rabbit-Habitat/dp/B008CB764C/ref=sr_1_6?ie=UTF8&qid=1470313845&sr=8-6">Guinea Pig Hutch</a>
-                </small>
+
+    <div id="otherHeader">
+        <img class="shape" src="img/restaurant_overview_shape.png" alt="shape">
+        <div class="bgCanvas">
+            <div id="otherBanner" class="otherBanner row">
+                <div id="logoMenu" class="col-md-4">
+                    <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+                    <div id="btnMenu">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        <button id="labelMenu" type="button">MENU</button>
+                    </div>
+                </div>
+                <div class="btnRegister col-md-4 pull-right">
+                    <a href="registration.html">Sign Up</a>
+                    <a href="login.html">Log In</a>
+                </div>
             </div>
-            <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+            <h5>CONTACT</h5>
         </div>
-        <script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(51.44164199999999,5.469722499999989),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.44164199999999,5.469722499999989)});infowindow = new google.maps.InfoWindow({content:'<strong>Our Restaurant</strong><br>Eindhoven, Netherlands<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
     </div>
-    <!--End Google map-->
-    
-    <div id="info">
-        <h1>Opening Times!</h1>
-        <p>Weekdays:</p>
-        <p>08:00 to 22:00</p>
-        <p>Weekends and holidays:</p>
-        <p>08:00 to 24:00</p>
-        
-        <h1>Constact us!</h1>
-        <p>Phone: 04764462324</p>
-        <p>From 08:00 to 24:00</p>
-        <p>Email: contact@delivariety.nl</p>
-        <p>At any time</p>
-        <p>Facebook: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">click here!</a></p>
-        <p>Twitter: <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> click here!</a></p>
+
+    <div id="contentWrapper">
+        <div id="contentContact">
+            <!--Start Google map->
+            <div id="map">
+                <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+                <div style='overflow:hidden;height:440px;width:700px;'>
+                <div id='gmap_canvas' style='height:440px;width:700px;'></div>
+                    <div>
+                        <small>
+                            <a href="https://www.amazon.com/Pawhut-Outdoor-Guinea-Rabbit-Habitat/dp/B008CB764C/ref=sr_1_6?ie=UTF8&qid=1470313845&sr=8-6">Guinea Pig Hutch</a>
+                        </small>
+                    </div>
+                    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                </div>
+                <script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(51.44164199999999,5.469722499999989),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.44164199999999,5.469722499999989)});infowindow = new google.maps.InfoWindow({content:'<strong>Our Restaurant</strong><br>Eindhoven, Netherlands<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+            </div>
+            <!--End Google map-->
+            <div id="google-map">
+                <iframe
+                  width="100%"
+                  height="700"
+                  frameborder="0" style="border:0"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBcA0vB22WqnvZdABLLYkiSLiMwTDjzHOg
+                    &q=Eindhoven,Netherlands" allowfullscreen>
+                </iframe>
+            </div>
+
+            <div id="contactInfo">
+                <h1>Opening Times!</h1>
+                <h3>Weekdays:</h3>
+                <p>08:00 to 22:00</p>
+                <h3>Weekends and holidays:</h3>
+                <p>08:00 to 24:00</p>
+
+                <h1>Constact us!</h1>
+                <p>Phone: 04764462324</p>
+                <p>From 08:00 to 24:00</p>
+                <p>Email: contact@delivariety.nl</p>
+                <p>At any time</p>
+                <div class="socialLink">
+                    <div><p>Facebook: </p></div>
+                    <div><img src="img/logo_facebook.png" alt="facebook"></div>
+                </div>
+                <div class="socialLink">
+                    <div><p>Twitter:</p></div>
+                    <div><img src="img/logo_twitter.png" alt="twitter"></div>
+                </div>
+            </div>
+        </div>
     </div>
     
     
     <!--Insert footer here-->
     <div id="bottom">
         <div id="social">
-            <img src="img/logo_facebook.png" alt="facebook">
-            <img src="img/logo_instagram.png" alt="instagram">
-            <img src="img/logo_twitter.png" alt="twitter">
+            <div class="follow"><img src="img/logo_facebook.png" alt="facebook"></div>
+            <div class="follow"><img src="img/logo_instagram.png" alt="instagram"></div>
+            <div class="follow"><img src="img/logo_twitter.png" alt="twitter"></div>
             <p>You are always welcomed to join us and follow us to get the latest offers</p>
         </div>
         <div id="copyright">
-            <p>© Varietaurant Food & Catering. All Rights Reserved.</p>
+            <p>© DeliVariety Food & Catering. All Rights Reserved.</p>
         </div>
     </div>
+
+    <!--overlay for the menu-->
+    <div id="overlay">
+        <div class="btnClose col-md-4">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-4">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Food Menu</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="btnRegOverlay">
+                <a href="registration.html">Sign Up</a>
+                <a href="login.html">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
+    <script src="js/main.js"></script>
 </body>
