@@ -13,7 +13,7 @@ p {
   padding: 0; }
 
 /*background of the header*/
-#header, #otherHeader {
+.header, .otherHeader {
   position: relative;
   background: url(../img/background_full.png) no-repeat center;
   background-size: cover;
@@ -32,13 +32,14 @@ p {
     height: 100%; }
 
 /*background of other headers*/
-#otherHeader {
+.otherHeader {
   background: url(../img/restaurant_overview.png) no-repeat center;
   background-size: cover; }
-  #otherHeader h5 {
+  .otherHeader h5 {
     position: relative;
     top: 20%;
     left: 50%;
+    text-shadow: 0 0 50px #1a1a1a;
     width: 40%;
     font: bold 2em Verdana, Geneva, Tahoma, sans-serif;
     color: #7ac943; }
@@ -55,31 +56,31 @@ p {
   height: 34%; }
 
 /*menu button and logo*/
-#logoMenu img {
+.logoMenu img {
   width: 35%;
   display: inline-block; }
-#logoMenu #btnMenu {
+.logoMenu .btnMenu {
   display: inline; }
-  #logoMenu #btnMenu i {
+  .logoMenu .btnMenu i {
     margin-left: 30px;
     vertical-align: middle;
     font-size: 2.5em;
     color: #efefef; }
-  #logoMenu #btnMenu #labelMenu {
+  .logoMenu .btnMenu .labelMenu {
     background-color: transparent;
     border-style: none;
     vertical-align: middle;
     color: #efefef;
     font-size: 1.8em; }
-  #logoMenu #btnMenu :hover {
+  .logoMenu .btnMenu :hover {
     cursor: pointer; }
 
 /*register buttons*/
-.btnRegister, .btnOtherRegister, #overlay .btnRegOverlay {
+.btnRegister, .btnOtherRegister, .overlay .btnRegOverlay {
   position: absolute;
   top: 20%;
   right: 0; }
-  .btnRegister a, .btnOtherRegister a, #overlay .btnRegOverlay a {
+  .btnRegister a, .btnOtherRegister a, .overlay .btnRegOverlay a {
     display: inline-block;
     height: 40px;
     width: 120px;
@@ -98,11 +99,11 @@ p {
   right: 0; }
 
 /*main page eye catching text and button*/
-#mainText h1, #mainText h3 {
+.mainText h1, .mainText h3 {
   color: #dedede;
   text-align: right;
   text-shadow: 0 0 10px #1a1a1a; }
-#mainText #introText {
+.mainText .introText {
   position: absolute;
   top: 55%;
   right: 45%; }
@@ -116,7 +117,7 @@ p {
   padding: 10px;
   font: 1.2em Verdana, Geneva, Tahoma, sans-serif;
   color: #efefef; }
-#mainText #btnOrder {
+.mainText #btnOrder {
   position: absolute;
   top: 75%;
   right: 0; }
@@ -139,9 +140,9 @@ p {
     margin: 2% auto; }
 
 /*3 big block elements below view location button*/
-#menuWarp :first-child {
+.menuWarp :first-child {
   border-left: 12px solid #ffffff; }
-#menuWarp :last-child {
+.menuWarp :last-child {
   border-right: 12px solid #ffffff; }
 
 /*big menu items*/
@@ -164,18 +165,13 @@ p {
       padding: 10px;
       font: bold 2em Verdana, Geneva, Tahoma, sans-serif;
       color: #7ac943;
-      background: rgba(26, 26, 26, 0.5);
-      -webkit-box-shadow: 0 0 50px #1a1a1a;
-      -mos-box-shadow: 0 0 50px #1a1a1a;
-      -ms-box-shadow: 0 0 50px #1a1a1a;
-      box-shadow: 0 0 50px #1a1a1a; }
+      background: rgba(26, 26, 26, 0.5); }
 
 /*menu content*/
-#contentWrapper {
+.contentWrapper {
   background: url(../img/background_texture.png) repeat;
   padding: 4% 6% 8% 6%; }
-  #contentWrapper #content {
-    width: 90%;
+  .contentWrapper .content {
     margin: 0 auto; }
 
 /*menu category and each menu item*/
@@ -216,6 +212,11 @@ p {
 .signUpForm {
   padding: 50px; }
 
+#bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
 /*contact page*/
 #contentContact {
   width: 90%;
@@ -244,21 +245,24 @@ p {
   flex: 1; }
 
 /*reservation page*/
+.reserveForm {
+  text-align: left; }
+
 #topDownMap img {
   width: 100%; }
 
 /*newsletter content below big menu buttons*/
-#newsletter {
+.newsletter {
   clear: left;
   text-align: center;
-  margin-top: 40px; }
-  #newsletter h3 {
+  margin: 40px 0 50px; }
+  .newsletter h3 {
     color: #7ac943;
     font-family: "brandon-grotesque", Helvetica, sans-serif; }
-  #newsletter input[type=email] {
+  .newsletter input[type=email] {
     height: 35px;
     width: 300px; }
-  #newsletter input[type=submit] {
+  .newsletter input[type=submit] {
     width: 100px;
     height: 35px;
     background: #7ac943;
@@ -268,44 +272,42 @@ p {
     color: #efefef; }
 
 /*footer etc.*/
-#bottom {
+.bottom {
   clear: left;
-  margin-top: 50px;
   background-color: #1a1a1a;
   text-align: center; }
 
-#social {
-  margin-top: 30px;
+.social {
   padding: 20px; }
-  #social .follow {
+  .social .follow {
     margin: 0 5px 0 5px;
     display: inline; }
-    #social .follow img {
+    .social .follow img {
       width: 3%;
       -webkit-transition: all 0.2s ease-in-out;
       -moz-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
-    #social .follow :hover {
+    .social .follow :hover {
       -moz-transform: scale(-1, 1);
       -o-transform: scale(-1, 1);
       -ms-transform: scale(-1, 1);
       -webkit-transform: scale(-1, 1);
       transform: scale(-1, 1); }
-  #social p {
+  .social p {
     margin: 0;
     padding: 10px;
     color: #dedede; }
 
-#copyright {
+.copyright {
   background-color: #7ac943; }
-  #copyright p {
+  .copyright p {
     margin: 0;
     padding: 10px;
     color: #1a1a1a; }
 
 /*overlay for javascript and jquery*/
-#overlay {
+.overlay {
   background: #1a1a1a;
   opacity: 0.9;
   position: fixed;
@@ -319,49 +321,61 @@ p {
   z-index: 2;
   /*navbar inside the menu*/
   /*overlay buttons*/ }
-  #overlay .btnClose {
+  .overlay .btnClose {
     font-size: 400%;
     color: #ffffff;
     text-align: center;
     margin-top: 40px; }
-    #overlay .btnClose :hover {
+    .overlay .btnClose :hover {
       cursor: pointer; }
-  #overlay .navbar {
+  .overlay .navbar {
     margin-top: 60px;
     padding-left: 0;
     text-align: center; }
-    #overlay .navbar li {
+    .overlay .navbar li {
       list-style: none;
       margin: 10px;
       padding: 5px; }
-      #overlay .navbar li a {
+      .overlay .navbar li a {
         color: #dedede;
         font: 1.5em Verdana, Geneva, Tahoma, sans-serif; }
-  #overlay .btnRegOverlay {
+  .overlay .btnRegOverlay {
     position: static;
     text-align: center; }
 
 .noScroll {
   overflow: hidden; }
 
-@media only screen and (min-width: 640px) and (max-width: 767px) {
-  #header, #otherHeader {
+@media only screen and (min-width: 641px) and (max-width: 767px) {
+  .header, .otherHeader {
     background: url(../img/background_small.png) no-repeat center;
     background-size: cover; }
+    .shape {
+      height: 420px; }
+
+  .otherHeader {
+    background: url(../img/restaurant_overview.png) no-repeat center;
+    background-size: cover;
+    height: 180px; }
+    .otherHeader h5 {
+      font-size: 1.4em; }
 
   .banner, .otherBanner {
-    height: 24%; }
-    .banner #logoMenu img, .otherBanner #logoMenu img {
-      width: 30%; }
+    height: 18%; }
 
-  #mainText #introText {
+  .otherBanner {
+    height: 50%; }
+    .otherBanner .logoMenu img {
+      width: 18%; }
+
+  .mainText .introText {
     width: 45%;
     position: absolute;
     top: 40%;
     right: 55%; }
 
   .secondary h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin: 10px auto 0; }
   .secondary p {
     margin: 0 auto; }
@@ -372,30 +386,47 @@ p {
       position: absolute;
       top: 30%; }
       .bigMenuItem .bigMenuText h2 {
-        font-size: 1.5em; }
+        font-size: 1.2em; }
 
-  .btnRegister a, .btnOtherRegister a, #overlay .btnRegOverlay a {
+  .btnRegister a, .btnOtherRegister a, .overlay .btnRegOverlay a {
     height: 30px;
     width: 100px;
     padding: 5px;
-    font-size: 1em; } }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .banner, .otherBanner {
-    height: 22%; }
+    font-size: 1em; }
 
-  .btnRegister, .btnOtherRegister, #overlay .btnRegOverlay {
+  .contentWrapper {
+    padding: 15px; }
+
+  #bottom {
     position: absolute;
-    top: 0;
-    right: 0; }
+    bottom: 0;
+    width: 100%; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .otherHeader h5 {
+    font-size: 1.5em; }
 
-  #mainText #introText {
-    width: 40%;
+  .banner, .otherBanner {
+    height: 34%; }
+
+  .otherBanner {
+    height: 50%; }
+
+  .logoMenu img {
+    width: 18%; }
+
+  .mainText .introText {
+    width: 35%;
     position: absolute;
     top: 40%;
     right: 55%; }
 
   .secondary h3 {
     font-size: 1.5em;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+
+  #bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%; } }
 
 /*# sourceMappingURL=stylesheet.css.map */

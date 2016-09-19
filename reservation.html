@@ -15,15 +15,15 @@
 </head>
 
 <body>
-<div id="otherHeader">
+<div class="otherHeader">
     <img class="shape" src="img/restaurant_overview_shape.png" alt="shape">
     <div class="bgCanvas">
-        <div id="otherBanner" class="otherBanner row">
-            <div id="logoMenu" class="col-md-4">
+        <div class="otherBanner row">
+            <div class="logoMenu col-md-4">
                 <a href="index.html"><img src="img/logo.png" alt="logo"></a>
-                <div id="btnMenu">
+                <div class="btnMenu">
                     <i class="fa fa-bars" aria-hidden="true"></i>
-                    <button id="labelMenu" type="button">MENU</button>
+                    <button class="labelMenu" type="button">MENU</button>
                 </div>
             </div>
             <div class="btnRegister col-md-4 pull-right">
@@ -31,7 +31,7 @@
                 <a href="login.html">Log In</a>
             </div>
         </div>
-        <h5>RESERVATIONS</h5>
+        <h5>RESERVATION</h5>
     </div>
 </div>
 
@@ -42,61 +42,66 @@
             <p>Temporary until proper image can be added.</p>
         </div>
         <div id="SideBar" class="col-md-4">
-            <div id="calendar">
-                <form class="form-group">
-                    <label>Date:</label>
-                    <input type="date" name="dateReservation"><br>
-                </form>
-            </div>
-            <div id="timeSelect">
-                <form class="form-group">
-                    <label>Time:</label>
-                    <input type="time" name="timeReservation" size="20"><br>
-                </form>
-            </div>
-            <filedset>
-                <legend>Contact Information:</legend>
-                <div class="form-group">
-                    <label class="control-label col-sm-12" for="phone">Phone Number:</label>
-                    <div class="col-sm-12">
-                        <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+            <form class="form-horizontal">
+                <filedset>
+                    <legend>Date & Time:</legend>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="date">Date:</label>
+                        <div class="col-sm-12">
+                            <input type="date" class="form-control" id="date" placeholder="">
+                        </div>
                     </div>
-                </div><br>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="time">Time:</label>
+                        <div class="col-sm-12">
+                            <input type="time" class="form-control" id="time" placeholder="">
+                        </div>
+                    </div>
+                </filedset>
+                <filedset>
+                    <legend>Contact Information:</legend>
+                    <div class="form-group">
+                        <label class="reserveForm control-label col-sm-3" for="phone">Phone:</label>
+                        <div class="col-sm-12">
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label class="control-label reserveForm col-sm-12" for="email">Email:</label>
+                        <div class="col-sm-12">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                    </div>
+                </filedset>
                 <div class="form-group">
-                    <label class="control-label col-sm-12" for="email">Email Address:</label>
                     <div class="col-sm-12">
-                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        <button type="submit" class="btn btn-default">Make Reservation</button>
                     </div>
                 </div>
-            </filedset>
-            <div id="submit">
-                <form class="form-group">
-                    <input type="submit" class="btn btn-default" value="Make reservation">
-                </form>
-            </div>
+            </form>
         </div>
     </div>
 </div>
 
-<!--Insert footer here-->
-<div id="bottom">
-    <div id="social">
+<div class="bottom">
+    <div class="social">
         <div class="follow"><img src="img/logo_facebook.png" alt="facebook"></div>
         <div class="follow"><img src="img/logo_instagram.png" alt="instagram"></div>
         <div class="follow"><img src="img/logo_twitter.png" alt="twitter"></div>
         <p>You are always welcomed to join us and follow us to get the latest offers</p>
     </div>
-    <div id="copyright">
+    <div class="copyright">
         <p>© DeliVariety Food & Catering. All Rights Reserved.</p>
     </div>
 </div>
 
 <!--overlay for the menu-->
-<div id="overlay">
-    <div class="btnClose col-md-4">
+<div class="overlay">
+    <div class="btnClose col-md-4 col-sm-4 col-xs-4">
         <i class="fa fa-times" aria-hidden="true"></i>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-4 col-xs-4">
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">Food Menu</a></li>

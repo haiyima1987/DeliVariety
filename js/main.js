@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    var $bgMenu = $("#btnMenu");
+    var $bgMenu = $(".btnMenu");
     var $btnClose = $(".btnClose");
-    var $overlay = $("#overlay");
+    var $overlay = $(".overlay");
     var $body = $("body");
     var $delayTime = 200;
     var $slidingTime = 500;
