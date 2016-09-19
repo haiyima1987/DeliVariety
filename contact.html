@@ -34,34 +34,19 @@
     </div>
 </div>
 
-<div id="contentWrapper">
-    <div id="contentContact">
-        <!--Start Google map->
-        <div id="map">
-            <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
-            <div style='overflow:hidden;height:440px;width:700px;'>
-            <div id='gmap_canvas' style='height:440px;width:700px;'></div>
-                <div>
-                    <small>
-                        <a href="https://www.amazon.com/Pawhut-Outdoor-Guinea-Rabbit-Habitat/dp/B008CB764C/ref=sr_1_6?ie=UTF8&qid=1470313845&sr=8-6">Guinea Pig Hutch</a>
-                    </small>
-                </div>
-                <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-            </div>
-            <script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(51.44164199999999,5.469722499999989),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.44164199999999,5.469722499999989)});infowindow = new google.maps.InfoWindow({content:'<strong>Our Restaurant</strong><br>Eindhoven, Netherlands<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
-        </div>
-        <!--End Google map-->
-        <div id="google-map">
+<!--google-maps and contact info-->
+<div class="contentWrapper">
+    <div class="contentContact row">
+        <div class="google-map col-md-6 col-sm-6 col-xs-12">
             <iframe
                     width="100%"
-                    height="700"
+                    height="400"
                     frameborder="0" style="border:0"
                     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBcA0vB22WqnvZdABLLYkiSLiMwTDjzHOg
                     &q=Eindhoven,Netherlands" allowfullscreen>
             </iframe>
         </div>
-
-        <div id="contactInfo">
+        <div class="contactInfo col-md-6 col-sm-6 col-xs-12">
             <h1>Opening Times!</h1>
             <h3>Weekdays:</h3>
             <p>08:00 to 22:00</p>
@@ -103,7 +88,7 @@
     <div class="btnClose col-md-4 col-sm-4 col-xs-4">
         <i class="fa fa-times" aria-hidden="true"></i>
     </div>
-    <div class="col-md-4 col-sm-4 col-xs-4">
+    <div class="navContainer col-md-4 col-sm-4 col-xs-4">
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">Food Menu</a></li>

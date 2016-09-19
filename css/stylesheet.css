@@ -50,29 +50,29 @@ p {
   opacity: 0.8;
   height: 18%;
   position: relative; }
+  .banner .logoMenu img, .otherBanner .logoMenu img {
+    width: 36%;
+    display: inline-block; }
 
 /*other banners*/
 .otherBanner {
   height: 34%; }
 
 /*menu button and logo*/
-.logoMenu img {
-  width: 35%;
-  display: inline-block; }
-.logoMenu .btnMenu {
+.btnMenu {
   display: inline; }
-  .logoMenu .btnMenu i {
+  .btnMenu i {
     margin-left: 30px;
     vertical-align: middle;
     font-size: 2.5em;
     color: #efefef; }
-  .logoMenu .btnMenu .labelMenu {
+  .btnMenu .labelMenu {
     background-color: transparent;
     border-style: none;
     vertical-align: middle;
     color: #efefef;
     font-size: 1.8em; }
-  .logoMenu .btnMenu :hover {
+  .btnMenu :hover {
     cursor: pointer; }
 
 /*register buttons*/
@@ -92,13 +92,13 @@ p {
     text-align: center;
     border: 1px solid #efefef; }
 
-/*register buttons other than home page*/
+/*register buttons for other pages*/
 .btnOtherRegister {
   position: absolute;
   top: 5%;
   right: 0; }
 
-/*main page eye catching text and button*/
+/*main page eye catching text and button on the jumbotron*/
 .mainText h1, .mainText h3 {
   color: #dedede;
   text-align: right;
@@ -122,7 +122,7 @@ p {
   top: 75%;
   right: 0; }
 
-/*view location content*/
+/*view location button and intro text*/
 .secondary {
   position: relative;
   background: url(../img/background_texture.png) no-repeat center;
@@ -139,13 +139,13 @@ p {
   .secondary #btnLocation a {
     margin: 2% auto; }
 
-/*3 big block elements below view location button*/
+/*3 pictures with buttons below view location button*/
 .menuWarp :first-child {
   border-left: 12px solid #ffffff; }
 .menuWarp :last-child {
   border-right: 12px solid #ffffff; }
 
-/*big menu items*/
+/*item in each picture*/
 .bigMenuItem {
   height: 300px;
   padding: 0;
@@ -167,7 +167,7 @@ p {
       color: #7ac943;
       background: rgba(26, 26, 26, 0.5); }
 
-/*menu content*/
+/*menu content background and outline*/
 .contentWrapper {
   background: url(../img/background_texture.png) repeat;
   padding: 4% 6% 8% 6%; }
@@ -203,55 +203,45 @@ p {
       color: #1a1a1a;
       padding: 0; }
 
+/*categories with a dark header*/
 .darkMenuBar {
   border: 2px solid #3a3a3a; }
   .darkMenuBar > p {
     background: #3a3a3a; }
 
-/*signUpForm*/
+/*sing up form*/
 .signUpForm {
   padding: 50px; }
 
+/*align #bottom to the bottom since the page content isn't enough to push it down*/
 #bottom {
   position: absolute;
   bottom: 0;
   width: 100%; }
 
 /*contact page*/
-#contentContact {
-  width: 90%;
-  margin: 0 auto;
-  display: flex; }
-
-#contactInfo {
-  width: 400px;
-  float: right; }
-
-#contactInfo p, #contactInfo h3 {
+.contactInfo p, .contactInfo h3 {
   text-align: left;
   padding: 5px 40px;
   margin: 0; }
 
-#contactInfo img {
+.contactInfo img {
   width: 15%; }
 
-#contactInfo .socialLink {
+.contactInfo .socialLink {
   display: flex; }
 
-#contactInfo .socialLink p {
+.contactInfo .socialLink p {
   width: 140px; }
 
-#google-map {
-  flex: 1; }
-
 /*reservation page*/
-.reserveForm {
+.reserveForm .control-label {
   text-align: left; }
 
-#topDownMap img {
+.topDownMap img {
   width: 100%; }
 
-/*newsletter content below big menu buttons*/
+/*newsletter content below the 3 pictures on the home page*/
 .newsletter {
   clear: left;
   text-align: center;
@@ -343,9 +333,102 @@ p {
     position: static;
     text-align: center; }
 
+/*when the menu is triggered to show, disable main page scrolling beneath the overlay*/
 .noScroll {
   overflow: hidden; }
 
+/*0 - 480 and 480 - 640 can be combined to one query on this site
+@media only screen and (max-width: 480px) {
+
+}*/
+@media only screen and (max-width: 640px) {
+  .header, .otherHeader {
+    background: url(../img/background_small.png) no-repeat center;
+    background-size: cover; }
+    .shape {
+      height: 420px; }
+
+  .otherHeader {
+    background: url(../img/restaurant_overview.png) no-repeat center;
+    background-size: cover;
+    height: 120px; }
+    .otherHeader h5 {
+      font-size: 1.4em;
+      position: static;
+      width: 100%; }
+
+  .banner, .otherBanner {
+    height: 16%; }
+    .banner .logoMenu img, .otherBanner .logoMenu img {
+      display: none; }
+
+  .otherBanner {
+    height: 50%; }
+    .otherBanner .logoMenu img {
+      display: none; }
+
+  .btnMenu {
+    position: relative;
+    top: 10px;
+    font-size: 1.2em; }
+    .btnMenu .labelMenu {
+      display: none; }
+
+  .mainText .introText {
+    width: 65%;
+    position: absolute;
+    top: 35%;
+    right: 32%; }
+  .mainText #btnOrder {
+    position: absolute;
+    top: 75%;
+    right: 110px; }
+
+  .secondary h3 {
+    font-size: 1.2em;
+    margin: 10px auto 0; }
+  .secondary p {
+    margin: 0 auto; }
+
+  .bigMenuItem {
+    height: 320px;
+    width: 100%; }
+    .bigMenuItem .bigMenuText {
+      position: absolute;
+      top: 30%; }
+      .bigMenuItem .bigMenuText h2 {
+        font-size: 1.2em; }
+
+  .btnRegister, .btnOtherRegister, .overlay .btnRegOverlay {
+    display: none; }
+
+  .contentWrapper {
+    padding: 20px 10px 20px 10px; }
+
+  .social .follow img {
+    width: 10%; }
+
+  #bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+
+  .reserveForm .control-label {
+    text-align: right; }
+
+  .signUpForm {
+    width: 100%;
+    margin: 0; }
+
+  .overlay .navContainer {
+    width: 100%; }
+  .overlay .btnClose {
+    width: 100%;
+    margin: 0; }
+  .overlay .btnRegOverlay {
+    display: block; }
+  .overlay .navbar {
+    margin: 0; } }
 @media only screen and (min-width: 641px) and (max-width: 767px) {
   .header, .otherHeader {
     background: url(../img/background_small.png) no-repeat center;
@@ -361,7 +444,7 @@ p {
       font-size: 1.4em; }
 
   .banner, .otherBanner {
-    height: 18%; }
+    height: 22%; }
 
   .otherBanner {
     height: 50%; }
@@ -400,19 +483,21 @@ p {
   #bottom {
     position: absolute;
     bottom: 0;
-    width: 100%; } }
+    width: 100%; }
+
+  .reserveForm .control-label {
+    text-align: right; } }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .otherHeader h5 {
     font-size: 1.5em; }
 
   .banner, .otherBanner {
-    height: 34%; }
+    height: 24%; }
 
   .otherBanner {
     height: 50%; }
-
-  .logoMenu img {
-    width: 18%; }
+    .otherBanner .logoMenu img {
+      width: 18%; }
 
   .mainText .introText {
     width: 35%;
@@ -427,6 +512,15 @@ p {
   #bottom {
     position: absolute;
     bottom: 0;
-    width: 100%; } }
+    width: 100%; }
+
+  .reserveForm .control-label {
+    text-align: right; }
+
+  .social .follow img {
+    width: 6%; } }
+@media only screen and (min-width: 992px) {
+  #bottom {
+    position: static; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
