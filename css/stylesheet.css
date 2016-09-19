@@ -16,7 +16,12 @@ p {
 #header, #otherHeader {
   position: relative;
   background: url(../img/background_full.png) no-repeat center;
-  background-size: cover; }
+  background-size: cover;
+  z-index: 1;
+  -webkit-box-shadow: 0 0 40px #696969;
+  -mos-box-shadow: 0 0 40px #696969;
+  -ms-box-shadow: 0 0 40px #696969;
+  box-shadow: 0 0 40px #696969; }
   .shape {
     vertical-align: top;
     width: 100%; }
@@ -95,7 +100,8 @@ p {
 /*main page eye catching text and button*/
 #mainText h1, #mainText h3 {
   color: #dedede;
-  text-align: right; }
+  text-align: right;
+  text-shadow: 0 0 10px #1a1a1a; }
 #mainText #introText {
   position: absolute;
   top: 55%;
@@ -115,23 +121,22 @@ p {
   top: 75%;
   right: 0; }
 
-/*view locatin content*/
-#secondary {
+/*view location content*/
+.secondary {
   position: relative;
   background: url(../img/background_texture.png) no-repeat center;
   background-size: cover;
-  text-align: center; }
-  #secondary #secondaryText {
-    position: absolute;
-    top: 16%; }
-    #secondary #secondaryText h3 {
-      color: #7ac943;
-      font: bold 1.8em Verdana, Geneva, Tahoma, sans-serif; }
-    #secondary #secondaryText p {
-      margin-top: 10px;
-      font: bold 1em Verdana, Geneva, Tahoma, sans-serif; }
-  #secondary #btnLocation a {
-    margin: 4% auto; }
+  text-align: center;
+  padding: 30px; }
+  .secondary h3 {
+    color: #7ac943;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold; }
+  .secondary p {
+    margin-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  .secondary #btnLocation a {
+    margin: 2% auto; }
 
 /*3 big block elements below view location button*/
 #menuWarp :first-child {
@@ -207,65 +212,40 @@ p {
   .darkMenuBar > p {
     background: #3a3a3a; }
 
-/*contact page*/
-#contentContact{
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-}
-    
-#contactInfo {
-    width: 400px;
-    float: right;
-}
-#contactInfo p,h3{
-    text-align: left;
-    padding: 5px 40px;
-    margin: 0;
-}
-#contactInfo img{
-    width: 15%;
-}
-#contactInfo .socialLink{
-    display: flex;
-}
-#contactInfo .socialLink p{
-    width: 140px;
-}
-#google-map{
-    flex: 1;
-}
-
-/*reservation page*/
-#reservationsContent{
-    width: 90%;
-    display: flex;
-    margin: 0 auto;
-}
-#topDownMap{
-    flex: 1;
-}
-#topDownMap img{
-    position: relative;
-}
-#topDownMap p{
-    position: relative;
-    bottom: 50px;
-}
-#reservationsContent #SideBar{
-    width: 400px;
-    float: right;
-}
-#reservationsContent #SideBar form{
-    padding: 20px 40px;
-}
-#reservationsContent #SideBar input{
-    float: right;
-}
-
 /*signUpForm*/
 .signUpForm {
   padding: 50px; }
+
+/*contact page*/
+#contentContact {
+  width: 90%;
+  margin: 0 auto;
+  display: flex; }
+
+#contactInfo {
+  width: 400px;
+  float: right; }
+
+#contactInfo p, #contactInfo h3 {
+  text-align: left;
+  padding: 5px 40px;
+  margin: 0; }
+
+#contactInfo img {
+  width: 15%; }
+
+#contactInfo .socialLink {
+  display: flex; }
+
+#contactInfo .socialLink p {
+  width: 140px; }
+
+#google-map {
+  flex: 1; }
+
+/*reservation page*/
+#topDownMap img {
+  width: 100%; }
 
 /*newsletter content below big menu buttons*/
 #newsletter {
@@ -336,6 +316,7 @@ p {
   width: 100%;
   height: 100%;
   display: none;
+  z-index: 2;
   /*navbar inside the menu*/
   /*overlay buttons*/ }
   #overlay .btnClose {
@@ -362,5 +343,59 @@ p {
 
 .noScroll {
   overflow: hidden; }
+
+@media only screen and (min-width: 640px) and (max-width: 767px) {
+  #header, #otherHeader {
+    background: url(../img/background_small.png) no-repeat center;
+    background-size: cover; }
+
+  .banner, .otherBanner {
+    height: 24%; }
+    .banner #logoMenu img, .otherBanner #logoMenu img {
+      width: 30%; }
+
+  #mainText #introText {
+    width: 45%;
+    position: absolute;
+    top: 40%;
+    right: 55%; }
+
+  .secondary h3 {
+    font-size: 1.5em;
+    margin: 10px auto 0; }
+  .secondary p {
+    margin: 0 auto; }
+
+  .bigMenuItem {
+    height: 240px; }
+    .bigMenuItem .bigMenuText {
+      position: absolute;
+      top: 30%; }
+      .bigMenuItem .bigMenuText h2 {
+        font-size: 1.5em; }
+
+  .btnRegister a, .btnOtherRegister a, #overlay .btnRegOverlay a {
+    height: 30px;
+    width: 100px;
+    padding: 5px;
+    font-size: 1em; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .banner, .otherBanner {
+    height: 22%; }
+
+  .btnRegister, .btnOtherRegister, #overlay .btnRegOverlay {
+    position: absolute;
+    top: 0;
+    right: 0; }
+
+  #mainText #introText {
+    width: 40%;
+    position: absolute;
+    top: 40%;
+    right: 55%; }
+
+  .secondary h3 {
+    font-size: 1.5em;
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
