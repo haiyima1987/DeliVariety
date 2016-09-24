@@ -1,0 +1,142 @@
+@media only screen and (min-width: 641px) and (max-width: 767px) {
+  .header {
+    background: url(../img/background_small.png) no-repeat center;
+    background-size: cover;
+    @at-root .shape {
+      height: 420px;
+    }
+  }
+
+  .otherHeader {
+    background: url(../img/restaurant_overview.png) no-repeat center;
+    background-size: cover;
+    height: 180px;
+    h5 {
+      font-size: 1.4em;
+    }
+  }
+
+  .banner {
+    height: 22%;
+  }
+
+  .otherBanner {
+    height: 50%;
+    .logoMenu {
+      img {
+        width: 18%
+      }
+    }
+  }
+
+  .mainText {
+    .introText {
+      width: 45%;
+      @include position(absolute, $top: 40%, $right: 55%);
+    }
+  }
+
+  .secondary {
+    h3 {
+      font-size: 1.2em;
+      margin: 10px auto 0;
+    }
+    p {
+      margin: 0 auto;
+    }
+  }
+
+  .bigMenuItem {
+    height: 240px;
+    .bigMenuText {
+      @include position(absolute, $top: 30%);
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .btnRegister {
+    a {
+      height: 30px;
+      width: 100px;
+      padding: 5px;
+      font-size: 1em;
+    }
+  }
+
+  .contentWrapper {
+    padding: 15px;
+  }
+
+  #bottom {
+    @include position(absolute, $bottom: 0);
+    width: 100%
+  }
+
+  .reserveForm {
+    .control-label {
+      text-align: right;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .otherHeader {
+    h5 {
+      font-size: 1.5em;
+    }
+  }
+
+  .banner {
+    height: 24%;
+  }
+
+  .otherBanner {
+    height: 50%;
+    .logoMenu {
+      img {
+        width: 18%;
+      }
+    }
+  }
+
+  .mainText {
+    .introText {
+      width: 35%;
+      @include position(absolute, $top: 40%, $right: 55%);
+    }
+  }
+
+  .secondary {
+    h3 {
+      font-size: 1.5em;
+      margin: 0 auto;
+    }
+  }
+
+  #bottom {
+    @include position(absolute, $bottom: 0);
+    width: 100%
+  }
+
+  .reserveForm {
+    .control-label {
+      text-align: right;
+    }
+  }
+
+  .social {
+    .follow {
+      img {
+        width: 6%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #bottom {
+    position: static;
+  }
+}

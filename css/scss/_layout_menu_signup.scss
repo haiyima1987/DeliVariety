@@ -1,0 +1,60 @@
+/*menu content background and outline*/
+.contentWrapper {
+  background: url(../img/background_texture.png) repeat;
+  padding: 4% 6% 8% 6%;
+  .content {
+    margin: 0 auto;
+  }
+}
+
+/*menu category and each menu item*/
+.menuCategory {
+  margin: 2% 0 0 0;
+  border: 2px solid $main-green;
+  p {
+    background: $main-green;
+    padding: 10px 10px 10px 16px;
+    text-align: left;
+    font-size: 1.4em;
+    margin: 0;
+    color: $white;
+  }
+  .menuItem {
+    padding: 2px;
+    img {
+      width: 100%;
+    }
+    .btnItemOrder {
+      @include position(absolute, $right: 0, $bottom: 25px);
+      background-color: $main-green;
+      border: 1px solid $white;
+      color: $clear-white;
+    }
+    p {
+      background: transparent;
+      height: 24px;
+      text-align: center;
+      color: $main-dark-grey;
+      padding: 0;
+    }
+  }
+}
+
+/*categories with a dark header*/
+.darkMenuBar {
+  border: 2px solid $light-dark-grey;
+  > p {
+    background: $light-dark-grey;
+  }
+}
+
+/*sing up form*/
+.signUpForm {
+  padding: 50px;
+}
+
+/*align #bottom to the bottom since the page content isn't enough to push it down*/
+#bottom {
+  @include position(absolute, $bottom: 0);
+  width: 100%
+}

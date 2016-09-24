@@ -7,10 +7,10 @@
 }
 
 @mixin transform($transforms) {
-  -moz-transform: $transforms;
-  -o-transform: $transforms;
-  -ms-transform: $transforms;
   -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
   transform: $transforms;
 }
 
@@ -29,12 +29,12 @@
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
     -webkit-box-shadow: inset $top $left $blur $color;
-    -mos-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
     -ms-box-shadow: inset $top $left $blur $color;
     box-shadow: inset $top $left $blur $color;
   } @else {
     -webkit-box-shadow: $top $left $blur $color;
-    -mos-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
     -ms-box-shadow: $top $left $blur $color;
     box-shadow: $top $left $blur $color;
   }
@@ -48,4 +48,10 @@
     -ms-transition: $property $duration $method;
   }
   transition: $property $duration $method;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
 }

@@ -5,7 +5,8 @@
 @import '_layout_header.scss';
 @import '_layout_homepage.scss';
 @import '_layout_menu_signup.scss';
-@import '_layout_reservation_contact.scss';
-@import '_layout_footer_nav_js';
+@import '_layout_reservation_contact_js.scss';
+@import '_layout_footer_nav.scss';
 
-@import '_modules_mediaqueries.scss';
+@import '_modules_media_xs.scss';
+@import '_modules_media_s_m_l.scss';

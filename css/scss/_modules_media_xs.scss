@@ -1,0 +1,138 @@
+/*0 - 480 and 480 - 640 can be combined to one query on this site
+@media only screen and (max-width: 480px) {
+
+}*/
+
+@media only screen and (max-width: 640px) {
+  .header {
+    background: url(../img/background_small.png) no-repeat center;
+    background-size: cover;
+    @at-root .shape {
+      height: 420px;
+    }
+  }
+
+  .otherHeader {
+    background: url(../img/restaurant_overview.png) no-repeat center;
+    background-size: cover;
+    height: 120px;
+    h5 {
+      font-size: 1.4em;
+      position: static;
+      width: 100%;
+    }
+  }
+
+  .banner {
+    height: 16%;
+    .logoMenu {
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .otherBanner {
+    height: 50%;
+    .logoMenu {
+      img {
+        display: none;
+      }
+    }
+  }
+
+  .btnMenu {
+    @include position(relative, $top: 10px);
+    font-size: 1.2em;
+    .labelMenu {
+      display: none;
+    }
+  }
+
+  .mainText {
+    .introText {
+      width: 65%;
+      @include position(absolute, $top: 35%, $right: 32%);
+    }
+    #btnOrder {
+      @include position(absolute, $top: 75%, $right: 110px);
+    }
+  }
+
+  .secondary {
+    h3 {
+      font-size: 1.2em;
+      margin: 10px auto 0;
+    }
+    p {
+      margin: 0 auto;
+    }
+  }
+
+  .bigMenuItem {
+    height: 320px;
+    width: 100%;
+    .bigMenuText {
+      @include position(absolute, $top: 30%);
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .btnRegister {
+    display: none;
+  }
+
+  .contentWrapper {
+    padding: 20px 10px 20px 10px;
+  }
+
+  .social {
+    .follow {
+      img {
+        width: 10%;
+      }
+    }
+  }
+
+  #bottom {
+    @include position(absolute, $bottom: 0);
+    width: 100%
+  }
+
+  .reserveForm {
+    .control-label {
+      text-align: right;
+    }
+  }
+
+  .signUpForm {
+    width: 100%;
+    margin: 0;
+  }
+
+  .overlay {
+    .navContainer {
+      width: 100%;
+    }
+    .btnClose {
+      width: 100%;
+      margin: 0;
+    }
+    .btnRegOverlay {
+      display: block;
+    }
+    .navbar {
+      margin: 0;
+    }
+  }
+
+  .pageDot {
+    display: none;
+  }
+
+  .carouselBtns {
+    display: none;
+  }
+}
