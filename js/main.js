@@ -160,4 +160,5 @@ $(document).ready(function () {
     function deselectSeats() {
         $(this).removeClass("selectedTable");
         $(this).one("click", selectSeats);
+    }
 })

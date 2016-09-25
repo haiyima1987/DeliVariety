@@ -241,9 +241,6 @@ p {
 .reserveForm .control-label {
   text-align: left; }
 
-.topDownMap img {
-  width: 100%; }
-
 /*overlay for javascript and jquery*/
 .overlay {
   background: #1a1a1a;
@@ -600,3 +597,25 @@ p {
     position: static; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
+
+.to-top {
+  background: none;
+  margin: 0;
+  position: fixed;
+  bottom: 40px;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  z-index: 100;
+  display: none;
+  text-decoration: none;
+  color: #7ac943;
+}
+
+.to-top i {
+  font-size: 60px;
+}
+
+.seatingElement img {
+  width: 100%;
+}
