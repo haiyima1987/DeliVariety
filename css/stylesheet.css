@@ -241,6 +241,9 @@ p {
 .reserveForm .control-label {
   text-align: left; }
 
+.topDownMap img {
+  width: 100%; }
+
 /*overlay for javascript and jquery*/
 .overlay {
   background: #1a1a1a;
@@ -341,6 +344,9 @@ p {
     display: none; }
 
 /*carousel dots*/
+.pageDotGroup .active {
+  background: #3a3a3a; }
+
 .pageDot {
   background: #dedede;
   border: none;
@@ -348,6 +354,26 @@ p {
   .pageDot:hover {
     background: #3a3a3a;
     cursor: pointer; }
+
+/*scroll up button*/
+.scrollUp {
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  z-index: 1;
+  display: none;
+  color: #7ac943;
+  opacity: 0.8; }
+  .scrollUp:hover {
+    opacity: 1;
+    cursor: pointer; }
+  .scrollUp i {
+    font-size: 60px; }
+
+.seatingElement:hover {
+  cursor: pointer; }
+.seatingElement img {
+  width: 100%; }
 
 /*newsletter content below the 3 pictures on the home page*/
 .newsletter {
@@ -597,25 +623,3 @@ p {
     position: static; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
-
-.to-top {
-  background: none;
-  margin: 0;
-  position: fixed;
-  bottom: 40px;
-  right: 0;
-  width: 70px;
-  height: 70px;
-  z-index: 100;
-  display: none;
-  text-decoration: none;
-  color: #7ac943;
-}
-
-.to-top i {
-  font-size: 60px;
-}
-
-.seatingElement img {
-  width: 100%;
-}

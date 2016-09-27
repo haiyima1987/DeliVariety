@@ -54,6 +54,7 @@ $(document).ready(function () {
             $carousel.css('margin-left', 0);
             $pageIndex = 1;
         }
+        switchActiveClass();
     }
 
     // task 3: click buttons to control the carousel
@@ -104,6 +105,7 @@ $(document).ready(function () {
     // flip one page back
     function pageRenewBack() {
         $pageIndex--;
+        switchActiveClass();
     }
 
     // task 4: click the dots to control the carousel
@@ -119,28 +121,50 @@ $(document).ready(function () {
         var $marginLeft = -100 * $index + "%";
         $carousel.animate({'margin-left': $marginLeft}, $slidingTimeCarousel);
         $pageIndex = $index + 1;
+        switchActiveClass();
     }
 
-    // scroll back to top of page
-    jQuery(document).ready(function() {
-        var offset = 250;
-        var duration = 300;
-        jQuery(window).scroll(function() {
-            if (jQuery(this).scrollTop() > offset) {
-                jQuery('.to-top').fadeIn(duration);
-            } else {
-                jQuery('.to-top').fadeOut(duration);
-            }
-        });
-        jQuery('.to-top').click(function(event) {
-            event.preventDefault();
-            jQuery('html, body').animate({scrollTop: 0}, duration);
-            return false;
-        })
-    });
+    // remove all the dots active class
+    function switchActiveClass() {
+        var $activeClass = "active";
+        var $activeDot = $pageIndex;
+        $dots.removeClass($activeClass);
+        if ($activeDot === 4) {
+            $activeDot = 1;
+        }
+        $($dots[$activeDot - 1]).addClass($activeClass);
+    }
+
+    // task 5: scroll back to top of the page
+    // variables of task 5
+    var $offset = 250;
+    var $duration = 300;
+    var $scrollBtn = $('.scrollUp');
+    var $page = $('html, body');
+
+    // add event handlers
+    $scrollBtn.on('click', scrollToTop);
+    $(window).on('scroll', showScrollBtn);
+
+    // scroll to top and show scroll button functions
+    function showScrollBtn() {
+        if ($(this).scrollTop() > $offset) {
+            $scrollBtn.fadeIn($duration);
+        } else {
+            $scrollBtn.fadeOut($duration);
+        }
+    }
+
+    function scrollToTop(event) {
+        event.preventDefault();
+        $page.animate({scrollTop: 0}, $duration);
+    }
+
+    // task 6: toggle the reserved table color
+    var $table = $(".tableImage");
 
     // hover over and select tables
-    $(".tableImage").hover(function() {
+    $table.hover(function() {
         if ($(this).is(".selectedTable") === false){
             $(this).attr('src', 'img/table_selected.jpg');
         }
@@ -150,8 +174,8 @@ $(document).ready(function () {
         }
     });
 
-    $(".tableImage").one("click", selectSeats);
-    
+    $table.one("click", selectSeats);
+
     function selectSeats() {
         $(this).addClass("selectedTable");
         $(this).one("click", deselectSeats);

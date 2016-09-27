@@ -141,6 +141,12 @@
 }
 
 /*carousel dots*/
+.pageDotGroup {
+  .active {
+    background: $light-dark-grey;
+  }
+}
+
 .pageDot {
   background: $text-white;
   border: none;
@@ -148,5 +154,31 @@
   &:hover {
     background: $light-dark-grey;
     cursor: pointer;
+  }
+}
+
+/*scroll up button*/
+.scrollUp {
+  @include position(fixed, $right: 20px, $bottom: 40px);
+  z-index: 1;
+  display: none;
+  color: $main-green;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  i {
+    font-size: 60px;
+  }
+}
+
+// reservation tables
+.seatingElement {
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    width: 100%;
   }
 }
