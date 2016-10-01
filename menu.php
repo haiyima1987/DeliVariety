@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
-    if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
-        $_SESSION['user_id'] = $_COOKIE['user_id'];
-        $_SESSION['username'] = $_COOKIE['username'];
-    }
-}
+//if (!isset($_SESSION['user_id'])) {
+//    if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
+//        $_SESSION['user_id'] = $_COOKIE['user_id'];
+//        $_SESSION['username'] = $_COOKIE['username'];
+//    }
+//}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
 
 <body>
 <?php
-require_once ('header.php');
+require_once ('include/header.php');
 ?>
 
 <!--overlay for the menu-->
@@ -59,9 +59,9 @@ require_once ('header.php');
 <div class="contentWrapper">
     <div class="content">
         <?php
-        require_once('appvars.php');
-        require_once('connectvars.php');
-        require_once('functions.php');
+        require_once('include/appvars.php');
+        require_once('include/connectvars.php');
+        require_once('include/functions.php');
 
         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
@@ -75,7 +75,7 @@ require_once ('header.php');
 </div>
 
 <?php
-require_once ('footer.php');
+require_once ('include/footer.php');
 ?>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>

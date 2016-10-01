@@ -151,7 +151,7 @@ if (!isset($_SESSION['user_id'])) {
 </div>
 
 <?php
-require_once('footer.php');
+require_once('include/footer.php');
 ?>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>

@@ -230,6 +230,11 @@ p {
   bottom: 0;
   width: 100%; }
 
+/*confirm use has signed up*/
+.confirm {
+  margin-top: 50px;
+  padding: 10px; }
+
 /*contact page*/
 .contactInfo p, .contactInfo h3 {
   text-align: left;

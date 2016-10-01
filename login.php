@@ -17,8 +17,8 @@
 <body>
 
 <?php
-require_once('header.php');
-require_once('connectvars.php');
+require_once('include/header_signup_login.php');
+require_once('include/connectvars.php');
 session_start();
 $error_msg = "";
 
@@ -27,28 +27,33 @@ if (!isset($_SESSION['user_id'])) {
         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
         $user_name = mysqli_real_escape_string($dbc, $_POST['username']);
         $password = mysqli_real_escape_string($dbc, $_POST['password']);
+        echo 'submitted';
 
         if (!empty($user_name) && !empty($password)) {
-            $query = "SELECT user_id, username FROM dv_user WHERE username = '$user_name' AND password = SHA('$password')";
+            $query = "SELECT user_id, username FROM dv_user WHERE username = '$user_name' AND password = sha1('$password')";
             $result = mysqli_query($dbc, $query);
+            echo 'entered';
+            echo $password;
+            echo sha1($password);
 
             if (mysqli_num_rows($result) == 1) {
 
-                echo 'mysqli_num_rows($result)';
                 $data = mysqli_fetch_array($result);
                 $_SESSION['user_id'] = $data['user_id'];
                 $_SESSION['username'] = $data['username'];
                 setcookie('user_id', $data['user_id'], time() + (60 * 60 * 24 * 30));
                 setcookie('username', $data['username'], time() + (60 * 60 * 24 * 30));
-                $menu_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menu.php';
+                $menu_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/menu.php';
                 header('Location: ' . $menu_url);
                 mysqli_close($dbc);
 
             } else {
                 $error_msg = 'Sorry, you have entered an invalid username or password';
+                echo '<div class="alert alert-danger col-md-offset-3 col-md-6">' . $error_msg . '</div>';
             }
         } else {
-            $error_msg = 'You must enter username and password to log in.';
+            $error_msg = 'You must enter username and password to log in';
+            echo '<div class="alert alert-danger col-md-offset-3 col-md-6">' . $error_msg . '</div>';
         }
     }
 }
@@ -56,8 +61,6 @@ if (!isset($_SESSION['user_id'])) {
 
 <?php
 if (empty($_SESSION['user_id'])) {
-    echo $error_msg;
-    echo 'wrong login';
     ?>
     <!--login form-->
     <div class="signUpForm col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-sm-6 col-sm-offset-3">
@@ -89,11 +92,25 @@ if (empty($_SESSION['user_id'])) {
     </div>
     <?php
 } else {
-    echo 'Welcome back! ' . $_SESSION['username'] . '.';
+    echo '<div class="alert alert-success col-md-offset-3 col-md-6">' . 'Welcome back! ' . $_SESSION['username'] . '</div>';
 }
-
-require_once('footer.php');
 ?>
+
+<div id="bottom" class="bottom">
+    <div class="social">
+        <div class="follow"><img src="img/logo_facebook.png" alt="facebook"></div>
+        <div class="follow"><img src="img/logo_instagram.png" alt="instagram"></div>
+        <div class="follow"><img src="img/logo_twitter.png" alt="twitter"></div>
+        <p>You are always welcomed to join us and follow us to get the latest offers</p>
+    </div>
+    <div class="copyright">
+        <p>© DeliVariety Food & Catering. All Rights Reserved.</p>
+    </div>
+</div>
+
+<div class="scrollUp">
+    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+</div>
 
 <!--overlay for the menu-->
 <div class="overlay">
@@ -108,12 +125,16 @@ require_once('footer.php');
             <li><a href="contact.php">Contact</a></li>
         </ul>
         <div class="btnRegOverlay">
-            <a href="registration.php">Sign Up</a>
-            <a href="#">Log In</a>
+            <?php
+            if (isset($_SESSION['user_id'])) {
+                echo '<a href="logout.php">Log Out</a>';
+            } else {
+                echo '<a href="registration.php">Sign Up</a>';
+            }
+            ?>
         </div>
     </div>
 </div>
-
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 <script src="js/main.js"></script>

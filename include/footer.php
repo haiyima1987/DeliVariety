@@ -1,4 +1,4 @@
-<div id="bottom" class="bottom">
+<div class="bottom">
     <div class="social">
         <div class="follow"><img src="img/logo_facebook.png" alt="facebook"></div>
         <div class="follow"><img src="img/logo_instagram.png" alt="instagram"></div>

@@ -11,7 +11,6 @@ if (!isset($_SESSION['user_id'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>DeliVariety</title>
     <meta charset="UTF-8">
@@ -28,30 +27,9 @@ if (!isset($_SESSION['user_id'])) {
 <body>
 
 <?php
-require_once ('header.php');
-?>
-
-<!--overlay for the menu-->
-<div class="overlay">
-    <div class="btnClose col-md-4 col-sm-4 col-xs-4">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
-    <div class="navContainer col-md-4 col-sm-4 col-xs-4">
-        <ul class="navbar">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="menu.php">Food Menu</a></li>
-            <li><a href="reservation.php">Reservation</a></li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-        <div class="btnRegOverlay">
-            <a href="#">Sign Up</a>
-            <a href="login.php">Log In</a>
-        </div>
-    </div>
-</div>
-
-<?php
-require_once('connectvars.php');
+require_once ('include/header_signup_login.php');
+require_once('include/connectvars.php');
+require_once('include/functions.php');
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
 if (isset($_POST["submit"])) {
@@ -71,23 +49,42 @@ if (isset($_POST["submit"])) {
         $data = mysqli_query($dbc, $query);
 
         if (mysqli_num_rows($data) == 0) {
-            $query = "INSERT INTO dv_user (firstname, lastname, birthday, gender, username, password, email, phone)" .
-                "VALUES ('$first_name', '$last_name', '$birthday', '$gender', '$user_name', SHA('$password1'), '$email', '$phone')";
-            $result = mysqli_query($dbc, $query);
+            do {
+                $user_id = generateRandomString();
+                $query = "INSERT INTO dv_user (user_id, firstname, lastname, birthday, gender, username, password, email, phone)" .
+                    "VALUES ('$user_id', '$first_name', '$last_name', '$birthday', '$gender', '$user_name', sha1('$password1'), '$email', '$phone')";
+                $result = mysqli_query($dbc, $query);
+            } while (!$result);
 
-            echo $first_name . ' ' . $last_name . ' has registered as a member of DeliVariety.<br/>';
-            echo 'Your username is: ' . $user_name . '<br/>';
-            echo 'Your password is: ' . $password1 . '<br/>';
-            echo 'Thank you so much for favoring DeliVariety Food & Catering!';
+            // after registering, automatically sign in
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['username'] = $user_name;
+            setcookie('user_id', $user_id, time() + (60 * 60 * 24 * 30));
+            setcookie('username', $user_name, time() + (60 * 60 * 24 * 30));
+            ?>
 
-            mysqli_close($dbc); // redirect to home page??
+            <div class="alert alert-success col-md-offset-3 col-md-6 confirm">
+                You have registered as a member of DeliVariety<br>
+                Your username is: <?php echo $user_name ?><br>
+                Your password is: <?php echo $password1 ?><br>
+                Thank you so much for favoring DeliVariety Food & Catering!<br>
+                Now you are logged in and you can<br>
+                <div class="btnGreen">
+                    <a href="menu.php">Order with 10% discount</a>
+                </div>
+            </div>
+
+            <?php
+            // you can redirect by JavaScript
+            // echo "<script>setTimeout(\"location.href = 'http://www.google.com';\",1500);</script>";
+            mysqli_close($dbc);
         } else {
             $form_incomplete = true;
-            echo 'An account with the same name exists, please use another name.';
+            echo '<div class="alert alert-danger col-md-offset-3 col-md-6">An account with the same name exists, please use another name.</div>';
         }
     } else {
         $form_incomplete = true;
-        echo 'Last Name, username, password, and email address cannot be empty.';
+        echo '<div class="alert alert-danger col-md-offset-3 col-md-6">Last Name, username, password, and email address cannot be empty.</div>';
     }
 } else {
     $form_incomplete = true;
@@ -179,8 +176,32 @@ if ($form_incomplete) {
     <?php
 }
 
-require_once ('footer.php');
+require_once('include/footer.php');
 ?>
+
+<!--overlay for the menu-->
+<div class="overlay">
+    <div class="btnClose col-md-4 col-sm-4 col-xs-4">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="navContainer col-md-4 col-sm-4 col-xs-4">
+        <ul class="navbar">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="menu.php">Food Menu</a></li>
+            <li><a href="reservation.php">Reservation</a></li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
+        <div class="btnRegOverlay">
+            <?php
+            if (isset($_SESSION['user_id'])) {
+                echo '<a href="logout.php">Log Out</a>';
+            } else {
+                echo '<a href="login.php">Log In</a>';
+            }
+            ?>
+        </div>
+    </div>
+</div>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 <script src="js/main.js"></script>
