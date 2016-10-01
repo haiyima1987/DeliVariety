@@ -20,15 +20,15 @@
     <div class="bgCanvas">
         <div class="otherBanner row">
             <div class="logoMenu col-md-4">
-                <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+                <a href="index.php"><img src="img/logo.png" alt="logo"></a>
                 <div class="btnMenu">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                     <button class="labelMenu" type="button">MENU</button>
                 </div>
             </div>
             <div class="btnRegister col-md-4 pull-right">
-                <a href="registration.html">Sign Up</a>
-                <a href="login.html">Log In</a>
+                <a href="registration.php">Sign Up</a>
+                <a href="login.php">Log In</a>
             </div>
         </div>
         <h5>RESERVATION</h5>
@@ -146,14 +146,14 @@ require_once ('appvars.php');
     </div>
     <div class="navContainer col-md-4 col-sm-4 col-xs-4">
         <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Food Menu</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="menu.php">Food Menu</a></li>
             <li><a href="#">Reservation</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
         <div class="btnRegOverlay">
-            <a href="registration.html">Sign Up</a>
-            <a href="login.html">Log In</a>
+            <a href="registration.php">Sign Up</a>
+            <a href="login.php">Log In</a>
         </div>
     </div>
 </div>

@@ -83,18 +83,11 @@ p {
   position: absolute;
   top: 20%;
   right: 0; }
-  .btnRegister p, .btnOtherRegister p, .overlay .btnRegOverlay p {
-    width: 50%;
-    position: relative;
-    bottom: -8px;
-    display: inline-block;
-    color: #dedede;
-    padding-right: 10px; }
   .btnRegister a, .btnOtherRegister a, .overlay .btnRegOverlay a {
     display: inline-block;
     height: 40px;
     width: 120px;
-    margin: 20px auto 10px;
+    margin: 20px auto auto 10px;
     padding: 8px;
     font: 1.3em Verdana, Geneva, Tahoma, sans-serif;
     color: #dedede;
@@ -188,11 +181,11 @@ p {
 .menuCategory {
   margin: 2% 0 0 0;
   border: 2px solid #7ac943; }
-  .menuCategory h3 {
+  .menuCategory p {
     background: #7ac943;
-    padding: 8px 8px 8px 16px;
+    padding: 10px 10px 10px 16px;
     text-align: left;
-    font-size: 1.3em;
+    font-size: 1.4em;
     margin: 0;
     color: #ffffff; }
   .menuCategory .menuItem {
@@ -202,22 +195,21 @@ p {
     .menuCategory .menuItem .btnItemOrder {
       position: absolute;
       right: 0;
-      bottom: 45px;
+      bottom: 25px;
       background-color: #7ac943;
       border: 1px solid #ffffff;
       color: #efefef; }
     .menuCategory .menuItem p {
       background: transparent;
-      height: 45px;
+      height: 24px;
       text-align: center;
       color: #1a1a1a;
-      padding: 0;
-      margin: 0; }
+      padding: 0; }
 
 /*categories with a dark header*/
 .darkMenuBar {
   border: 2px solid #3a3a3a; }
-  .darkMenuBar > h3 {
+  .darkMenuBar > p {
     background: #3a3a3a; }
 
 /*sing up form*/

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
+        $_SESSION['user_id'] = $_COOKIE['user_id'];
+        $_SESSION['username'] = $_COOKIE['username'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +37,16 @@
                     <button class="labelMenu" type="button">MENU</button>
                 </div>
             </div>
-            <div class="btnRegister col-md-4 col-sm-5 col-xs-5 pull-right">
-                <a href="registration.php">Sign Up</a>
-                <a href="login.php">Log In</a>
+            <div class="btnRegister col-md-4 pull-right">
+                <?php
+                if (isset($_SESSION['user_id'])) {
+                    echo '<p>Welcome back! Now order with 10% discount!</p>' .
+                        '<a href="logout.php">Log Out</a>';
+                } else {
+                    echo '<a href="registration.php">Sign Up</a>' .
+                        '<a href="login.php">Log In</a>';
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -62,6 +79,31 @@
             <div id="btnOrder" class="btnGreen col-md-5 col-sm-6  col-xs-6">
                 <a href="menu.php">MENU & ONLINE ORDER</a>
             </div>
+        </div>
+    </div>
+</div>
+
+<!--overlay for the menu-->
+<div class="overlay">
+    <div class="btnClose col-md-4 col-sm-4 col-xs-4">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="navContainer col-md-4 col-sm-4 col-xs-4">
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="menu.php">Food Menu</a></li>
+            <li><a href="reservation.php">Reservation</a></li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
+        <div class="btnRegOverlay">
+            <?php
+            if (isset($_SESSION['user_id'])) {
+                echo '<a href="logout.php">Log Out</a>';
+            } else {
+                echo '<a href="registration.php">Sign Up</a>' .
+                    '<a href="login.php">Log In</a>';
+            }
+            ?>
         </div>
     </div>
 </div>
@@ -108,49 +150,9 @@
     </div>
 </div>
 
-<!--newsletter submission-->
-<div class="newsletter">
-    <h3>We offer the best varieties and services for you to enjoy</h3>
-    <p>Stay up-to-date with our newest varieties, upcoming events, specials and promotions</p>
-    <input type="email" name="email" value="">
-    <input type="submit" name="submit" value="SIGN UP">
-</div>
-
-<!--social media and copy right-->
-<div class="bottom">
-    <div class="social">
-        <div class="follow"><img src="img/logo_facebook.png" alt="facebook"></div>
-        <div class="follow"><img src="img/logo_instagram.png" alt="instagram"></div>
-        <div class="follow"><img src="img/logo_twitter.png" alt="twitter"></div>
-        <p>You are always welcomed to join us and follow us to get the latest offers</p>
-    </div>
-    <div class="copyright">
-        <p>© DeliVariety Food & Catering. All Rights Reserved.</p>
-    </div>
-</div>
-
-<!--overlay for the menu-->
-<div class="overlay">
-    <div class="btnClose col-md-4 col-sm-4 col-xs-4">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
-    <div class="navContainer col-md-4 col-sm-4 col-xs-4">
-        <ul class="navbar">
-            <li><a href="#">Home</a></li>
-            <li><a href="menu.php">Food Menu</a></li>
-            <li><a href="reservation.php">Reservation</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="btnRegOverlay">
-            <a href="registration.php">Sign Up</a>
-            <a href="login.php">Log In</a>
-        </div>
-    </div>
-</div>
-
-<div class="scrollUp">
-    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
-</div>
+<?php
+require_once('footer.php');
+?>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 <script src="js/main.js"></script>

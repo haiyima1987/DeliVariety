@@ -11,11 +11,11 @@
 .menuCategory {
   margin: 2% 0 0 0;
   border: 2px solid $main-green;
-  p {
+  h3 {
     background: $main-green;
-    padding: 10px 10px 10px 16px;
+    padding: 8px 8px 8px 16px;
     text-align: left;
-    font-size: 1.4em;
+    font-size: 1.3em;
     margin: 0;
     color: $white;
   }
@@ -25,17 +25,18 @@
       width: 100%;
     }
     .btnItemOrder {
-      @include position(absolute, $right: 0, $bottom: 25px);
+      @include position(absolute, $right: 0, $bottom: 45px);
       background-color: $main-green;
       border: 1px solid $white;
       color: $clear-white;
     }
     p {
       background: transparent;
-      height: 24px;
+      height: 45px;
       text-align: center;
       color: $main-dark-grey;
       padding: 0;
+      margin: 0;
     }
   }
 }
@@ -43,7 +44,7 @@
 /*categories with a dark header*/
 .darkMenuBar {
   border: 2px solid $light-dark-grey;
-  > p {
+  > h3 {
     background: $light-dark-grey;
   }
 }

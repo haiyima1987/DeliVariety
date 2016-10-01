@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
 <html lang="en">
 
 <head>
-    <title>DeliVariety</title>
+    <title>DeliVariety - Contact</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
@@ -26,8 +26,9 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
+
 <?php
-require_once ('header.php');
+require_once('header.php');
 ?>
 
 <!--overlay for the menu-->
@@ -38,9 +39,9 @@ require_once ('header.php');
     <div class="navContainer col-md-4 col-sm-4 col-xs-4">
         <ul class="navbar">
             <li><a href="index.php">Home</a></li>
-            <li><a href="#">Food Menu</a></li>
+            <li><a href="menu.php">Food Menu</a></li>
             <li><a href="reservation.php">Reservation</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
         <div class="btnRegOverlay">
             <?php
@@ -55,27 +56,44 @@ require_once ('header.php');
     </div>
 </div>
 
-<!--menu category and items inside each category-->
+<!--google-maps and contact info-->
 <div class="contentWrapper">
-    <div class="content">
-        <?php
-        require_once('appvars.php');
-        require_once('connectvars.php');
-        require_once('functions.php');
+    <div class="contentContact row">
+        <div class="google-map col-md-6 col-sm-6 col-xs-12">
+            <iframe
+                width="100%"
+                height="400"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBcA0vB22WqnvZdABLLYkiSLiMwTDjzHOg
+                    &q=Eindhoven,Netherlands" allowfullscreen>
+            </iframe>
+        </div>
+        <div class="contactInfo col-md-6 col-sm-6 col-xs-12">
+            <h1>Opening Times!</h1>
+            <h3>Weekdays:</h3>
+            <p>08:00 to 22:00</p>
+            <h3>Weekends and holidays:</h3>
+            <p>08:00 to 24:00</p>
 
-        $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
-
-        for ($index = 1; $index <= 4; $index++) {
-            generate_menu_items($dbc, $index);
-        }
-
-        mysqli_close($dbc);
-        ?>
+            <h1>Contact us!</h1>
+            <p>Phone: 04764462324</p>
+            <p>From 08:00 to 24:00</p>
+            <p>Email: contact@delivariety.nl</p>
+            <p>At any time</p>
+            <div class="socialLink">
+                <div><p>Facebook: </p></div>
+                <div><img src="img/logo_facebook.png" alt="facebook"></div>
+            </div>
+            <div class="socialLink">
+                <div><p>Twitter:</p></div>
+                <div><img src="img/logo_twitter.png" alt="twitter"></div>
+            </div>
+        </div>
     </div>
 </div>
 
 <?php
-require_once ('footer.php');
+require_once('footer.php');
 ?>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>

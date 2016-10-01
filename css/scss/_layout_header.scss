@@ -76,11 +76,18 @@
 /*register buttons*/
 .btnRegister {
   @include position(absolute, $top: 20%, $right: 0);
+  p {
+    width: 50%;
+    @include position(relative, $bottom: -8px);
+    display: inline-block;
+    color: $text-white;
+    padding-right: 10px;
+  }
   a {
     display: inline-block; // block elements have sizes;
     height: 40px;
     width: 120px;
-    margin: 20px auto auto 10px;
+    margin: 20px auto 10px;
     padding: 8px;
     font: 1.3em Verdana, Geneva, Tahoma, sans-serif;
     color: $text-white;
