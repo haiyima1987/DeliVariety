@@ -29,6 +29,14 @@
       background-color: $main-green;
       border: 1px solid $white;
       color: $clear-white;
+      height: 35px;
+      width: 70px;
+      text-align: center;
+      padding-top: 6px;
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+      }
     }
     p {
       background: transparent;
@@ -37,6 +45,13 @@
       color: $main-dark-grey;
       padding: 0;
       margin: 0;
+    }
+    .btnItemPrice {
+      @extend .btnItemOrder;
+      @include position(absolute, $left: 0, $top: 0);
+      &:hover {
+        cursor: auto;
+      }
     }
   }
 }
@@ -64,4 +79,82 @@
 .confirm {
   margin-top: 50px;
   padding: 10px;
+}
+
+/*lunch box*/
+.lunchBox {
+  padding: 0;
+  @include position(fixed, $top:50px, $right: 20px);
+  z-index: 5;
+  .boxItem {
+    border: 1px solid $text-white;
+    background: $main-dark-grey;
+  }
+  .boxImg {
+    border: 1px solid $text-white;
+    padding: 0;
+    img {
+      width: 100%;
+    }
+  }
+  .boxText {
+    padding: 0;
+    h4 {
+      color: $text-white;
+      margin: 12px 0 0 10px;
+    }
+  }
+  .btnGreen {
+    padding: 0;
+    a {
+      font: 1em Verdana, Geneva, Tahoma, sans-serif;
+      width: auto;
+      height: auto;
+      padding: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/*payment pop up page*/
+.payBox {
+  display: none;
+  max-height: 900px;
+  overflow: auto;
+  @include position(absolute, $top: 50%, $left: 50%);
+  @include translate(-50%, 0);
+  z-index: 5;
+  background: $light-grey;
+  padding: 10px;
+  form {
+    margin: 0;
+    input[type=submit] {
+      background: $main-green;
+      border: 2px solid $clear-white;
+      padding: 10px;
+      font: 1.2em Verdana, Geneva, Tahoma, sans-serif;
+      color: $clear-white;
+      float: right;
+    }
+  }
+  img {
+    width: 100%;
+  }
+  table>tbody>tr {
+    text-align: right;
+    .imgPayBox {
+      width: 20%;
+    }
+    input {
+      width: 30%;
+    }
+  }
+  .btnGreen {
+    a {
+      width: auto;
+      height: auto;
+    }
+  }
 }

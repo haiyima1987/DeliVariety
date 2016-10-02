@@ -1,6 +1,3 @@
-* {
-  border: 1px dashed black; }
-
 html, body {
   margin: 0;
   padding: 0; }
@@ -199,13 +196,20 @@ p {
     padding: 2px; }
     .menuCategory .menuItem img {
       width: 100%; }
-    .menuCategory .menuItem .btnItemOrder {
+    .menuCategory .menuItem .btnItemOrder, .menuCategory .menuItem .btnItemPrice {
       position: absolute;
       right: 0;
       bottom: 45px;
       background-color: #7ac943;
       border: 1px solid #ffffff;
-      color: #efefef; }
+      color: #efefef;
+      height: 35px;
+      width: 70px;
+      text-align: center;
+      padding-top: 6px; }
+      .menuCategory .menuItem .btnItemOrder:hover, .menuCategory .menuItem .btnItemPrice:hover {
+        cursor: pointer;
+        text-decoration: none; }
     .menuCategory .menuItem p {
       background: transparent;
       height: 45px;
@@ -213,6 +217,12 @@ p {
       color: #1a1a1a;
       padding: 0;
       margin: 0; }
+    .menuCategory .menuItem .btnItemPrice {
+      position: absolute;
+      top: 0;
+      left: 0; }
+      .menuCategory .menuItem .btnItemPrice:hover {
+        cursor: auto; }
 
 /*categories with a dark header*/
 .darkMenuBar {
@@ -234,6 +244,73 @@ p {
 .confirm {
   margin-top: 50px;
   padding: 10px; }
+
+/*lunch box*/
+.lunchBox {
+  padding: 0;
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  z-index: 5; }
+  .lunchBox .boxItem {
+    border: 1px solid #dedede;
+    background: #1a1a1a; }
+  .lunchBox .boxImg {
+    border: 1px solid #dedede;
+    padding: 0; }
+    .lunchBox .boxImg img {
+      width: 100%; }
+  .lunchBox .boxText {
+    padding: 0; }
+    .lunchBox .boxText h4 {
+      color: #dedede;
+      margin: 12px 0 0 10px; }
+  .lunchBox .btnGreen {
+    padding: 0; }
+    .lunchBox .btnGreen a {
+      font: 1em Verdana, Geneva, Tahoma, sans-serif;
+      width: auto;
+      height: auto;
+      padding: 5px; }
+      .lunchBox .btnGreen a:hover {
+        cursor: pointer; }
+
+/*payment pop up page*/
+.payBox {
+  display: none;
+  max-height: 900px;
+  overflow: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  z-index: 5;
+  background: #d3d3d3;
+  padding: 10px; }
+  .payBox form {
+    margin: 0; }
+    .payBox form input[type=submit] {
+      background: #7ac943;
+      border: 2px solid #efefef;
+      padding: 10px;
+      font: 1.2em Verdana, Geneva, Tahoma, sans-serif;
+      color: #efefef;
+      float: right; }
+  .payBox img {
+    width: 100%; }
+  .payBox table > tbody > tr {
+    text-align: right; }
+    .payBox table > tbody > tr .imgPayBox {
+      width: 20%; }
+    .payBox table > tbody > tr input {
+      width: 30%; }
+  .payBox .btnGreen a {
+    width: auto;
+    height: auto; }
 
 /*contact page*/
 .contactInfo p, .contactInfo h3 {

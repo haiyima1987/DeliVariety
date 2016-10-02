@@ -185,4 +185,17 @@ $(document).ready(function () {
         $(this).removeClass("selectedTable");
         $(this).one("click", selectSeats);
     }
+
+    // task 7: show order list
+    // variables for task 7
+    var $btnList = $("#btnList");
+    var $payBox = $(".payBox");
+    var $fadeInTime = 200;
+    $btnList.on('click', toggleOrderList);
+
+    // show order list
+    function toggleOrderList(e) {
+        $payBox.fadeToggle($fadeInTime);
+        e.preventDefault();
+    }
 })
