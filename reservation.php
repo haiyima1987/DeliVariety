@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
+        $_SESSION['user_id'] = $_COOKIE['user_id'];
+        $_SESSION['username'] = $_COOKIE['username'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +21,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jquery-timepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css" rel="stylesheet">
+    <!-- bootstrap-datepicker-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet">
     <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="text/javascript" src="js/reservation.js"></script>
 </head>
 
 <body>
@@ -27,64 +44,35 @@
                 </div>
             </div>
             <div class="btnRegister col-md-4 pull-right">
-                <a href="registration.php">Sign Up</a>
-                <a href="login.php">Log In</a>
+                <?php
+                if (isset($_SESSION['user_id'])) {
+                    echo '<p>Welcome back! Now order with 10% discount!</p>' .
+                        '<a href="logout.php">Log Out</a>';
+                } else {
+                    echo '<a href="registration.php">Sign Up</a>' .
+                        '<a href="login.php">Log In</a>';
+                }
+                ?>
             </div>
         </div>
         <h5>RESERVATION</h5>
     </div>
 </div>
-
 <?php
-require_once ('appvars.php');
+require_once ('include/appvars.php');
+$current_time = date('H:i');
+$current_date = date('Y-m-d');
 ?>
 
 <div class="contentWrapper">
     <div class="reservationsContent row">
-        <div class="topDownMap col-md-8 col-sm-12 col-xs-12">
-            <div class="seatingRow row">
-                <div class="seatingElement col-md-3">
-                    <img src="img/table.jpg" alt="available" class="tableImage">
-                </div>
-                <div class="seatingElement col-md-3">
-
-                </div>
-                <div class="seatingElement col-md-3">
-                    <img src="img/table.jpg" alt="available" class="tableImage">
-                </div>
-                <div class="seatingElement col-md-3">
-                    <img src="img/table.jpg" alt="available" class="tableImage">
-                </div>
-            </div>
-            <div class="seatingRow row">
-                <div class="seatingElement col-md-3">
-                    <img src="img/table.jpg" alt="available" class="tableImage">
-                </div>
-                <div class="seatingElement col-md-3">
-
-                </div>
-                <div class="seatingElement col-md-3">
-
-                </div>
-                <div class="seatingElement col-md-3">
-                    <img src="img/table.jpg" alt="available" class="tableImage">
-                </div>
-            </div>
-            <div class="seatingRow row">
-                <div class="seatingElement col-md-3">
-                    <img src="img/table.jpg" alt="available" class="tableImage">
-                </div>
-                <div class="seatingElement col-md-3">
-                    <img src="img/table.jpg" alt="available" class="tableImage">
-                </div>
-                <div class="seatingElement col-md-3">
-
-                </div>
-                <div class="seatingElement col-md-3">
-                    <img src="img/table.jpg" alt="available" class="tableImage">
-                </div>
-            </div>
+        <div id="tableLayoutPHP">
+            <p>Tables loading...</p>
+            <?php
+            //require('res_tables.php');
+            ?>
         </div>
+
         <div class="sideBar col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
             <form class="form-horizontal reserveForm">
                 <filedset>
@@ -92,13 +80,13 @@ require_once ('appvars.php');
                     <div class="form-group">
                         <label class="control-label col-md- 3 col-sm-3 col-xs-3" for="date">Date:</label>
                         <div class="col-md-12 col-sm-9 col-xs-9">
-                            <input type="date" class="form-control" id="date" placeholder="">
+                            <input type="text" class="form-control" id="date" value="<?php echo $current_date; ?>" onchange="updateTables()">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md- 3 col-sm-3 col-xs-3" for="time">Time:</label>
                         <div class="col-md-12 col-sm-9 col-xs-9">
-                            <input type="time" class="form-control" id="time" placeholder="">
+                            <input id="timeInput" type="text" value="<?php echo $current_time; ?>" class="time ui-timepicker-input form-control" autocomplete="off" onchange="updateTables()">
                         </div>
                     </div>
                 </filedset>
@@ -122,22 +110,20 @@ require_once ('appvars.php');
                         <button type="submit" class="btn btn-default">Make Reservation</button>
                     </div>
                 </div>
+                <p id="phpTestingGround">
+                    <?php
+                    echo $date;
+                    echo "testing something";
+                    ?>
+                </p>
             </form>
         </div>
     </div>
 </div>
 
-<div class="bottom">
-    <div class="social">
-        <div class="follow"><img src="img/logo_facebook.png" alt="facebook"></div>
-        <div class="follow"><img src="img/logo_instagram.png" alt="instagram"></div>
-        <div class="follow"><img src="img/logo_twitter.png" alt="twitter"></div>
-        <p>You are always welcomed to join us and follow us to get the latest offers</p>
-    </div>
-    <div class="copyright">
-        <p>© DeliVariety Food & Catering. All Rights Reserved.</p>
-    </div>
-</div>
+<?php
+require_once('include/footer.php');
+?>
 
 <!--overlay for the menu-->
 <div class="overlay">
