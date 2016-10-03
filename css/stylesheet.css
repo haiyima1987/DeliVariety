@@ -713,3 +713,7 @@ p {
     position: static; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
+
+#timeInput {
+  width: 100%;
+}
