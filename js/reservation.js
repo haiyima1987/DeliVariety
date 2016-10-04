@@ -16,4 +16,17 @@ function updateTables(){
 
     xmlhttp.open("GET", "res_tables.php?d="+$date+"&t="+$time, true);
     xmlhttp.send();
-}
+};
+
+//solution found: http://jsfiddle.net/7dcuh/15/
+$(document).on('mouseenter', '.tableImage', function () {
+    if ($(this).is(".selectedTable") === false){
+        $(this).attr('src', 'img/table_selected.png');
+    }
+}).on('mouseleave', '.tableImage', function () {
+    if ($(this).is(".selectedTable") === false) {
+        $(this).attr('src', 'img/table.png');
+    }
+}).on('click', '.tableImage', function () {
+    $(this).toggleClass("selectedTable");
+});
