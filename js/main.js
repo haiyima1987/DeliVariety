@@ -161,6 +161,8 @@ $(document).ready(function () {
     }
 
     // task 6: toggle the reserved table color
+    // moved to reservation.js
+    /*
     var $table = $(".tableImage");
 
     // hover over and select tables
@@ -185,6 +187,7 @@ $(document).ready(function () {
         $(this).removeClass("selectedTable");
         $(this).one("click", selectSeats);
     }
+    */
 
     // task 7: show order list
     // variables for task 7
