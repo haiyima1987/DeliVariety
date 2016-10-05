@@ -71,7 +71,7 @@ $current_date = date('Y-m-d');
             <p>Tables loading...</p>
         </div>
         <div class="sideBar col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-            <form class="form-horizontal reserveForm" action="include/reserve.php" method="post">
+            <form class="form-horizontal reserveForm" onsubmit="event.preventDefault(); displayConfirmation();">
                 <filedset>
                     <legend>Date & Time:</legend>
                     <div class="form-group">
@@ -104,10 +104,11 @@ $current_date = date('Y-m-d');
                 </filedset>
                 <div class="form-group">
                     <div class="col-md-9 col-sm-4 col-sm-offset-4 col-xs-4 col-xs-offset-4">
-                        <button type="submit" class="btn btn-default">Make Reservation</button>
+                        <button type="submit" name="Submit" class="btn btn-default">Make Reservation</button>
                     </div>
                 </div>
             </form>
+            <div id="regConfirm"></div>
         </div>
     </div>
 </div>

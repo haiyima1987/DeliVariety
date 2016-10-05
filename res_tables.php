@@ -25,7 +25,6 @@ $table_id = array(
 
 // 0 = no table, 1 = empty table, 2 = reserved table
 
-0.
 $table_shape = array(
     array(1,0,1,1),
     array(1,0,0,1),
