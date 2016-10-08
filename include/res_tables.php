@@ -1,6 +1,6 @@
 <?php
-require_once('include/connectvars.php');
-require_once('include/appvars.php');
+require_once('connectvars.php');
+require_once('appvars.php');
 
 $debug = false;
 
