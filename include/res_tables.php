@@ -1,6 +1,8 @@
 <?php
-require_once('include/connectvars.php');
-require_once('include/appvars.php');
+require_once('connectvars.php');
+require_once('appvars.php');
+
+$debug = false;
 
 $date = strval($_GET['d']);
 $time = strval($_GET['t']).":00";
@@ -62,9 +64,10 @@ for($row = 0; $row < count($table_shape); $row++){
     echo '</div>';
 }
 
-//debug
-echo '<br>';
-echo date(DATE_RFC2822).'<br>';
-echo $time.'<br>';
-echo $date;
+if($debug){
+    echo '<br>';
+    echo date(DATE_RFC2822).'<br>';
+    echo $time.'<br>';
+    echo $date;
+}
 ?>

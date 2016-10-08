@@ -1,5 +1,4 @@
 <?php
-
 require_once('connectvars.php');
 require_once('appvars.php');
 
@@ -11,7 +10,6 @@ $phone = test_input(strval($_POST["p"]));
 $email = test_input(strval($_POST["e"]));
 $tables = $_POST["tables"];
 $tables = explode(",", $tables);
-echo count($tables).'<br>';
 
 function test_input($data){
     $data = trim($data);
@@ -28,7 +26,7 @@ try {
     $sql_str = "";
     //example: INSERT INTO dv_table (table_id, table_reserved, email, phone, res_date, res_time) VALUES (1, 1, "phone", "email", "2016-10-05", "15:00:00");
     for ($x = 0; $x < count($tables); $x++){
-        $sql_str .= "INSERT INTO dv_table (table_id, table_reserved, email, phone, res_date, res_time) VALUES (".$tables[$x].", 1, \"".$phone."\", \"".$email."\", \"".$date."\", \"".$time."\");";
+        $sql_str .= "INSERT INTO dv_table (table_id, table_reserved, email, phone, res_date, res_time) VALUES (".$tables[$x].", 1, \"".$email."\", \"".$phone."\", \"".$date."\", \"".$time."\");";
     }
     $stmt = $conn->prepare($sql_str);
     $stmt->execute();

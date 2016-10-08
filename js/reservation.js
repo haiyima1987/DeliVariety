@@ -8,13 +8,11 @@ function updateTables(){
         if (this.readyState == 4 && this.status == 200){
             document.getElementById("tableLayoutPHP").innerHTML = this.responseText;
         }
-    }
+    };
     var $date = $('#date').val();
     var $time = $('#timeInput').val();
 
-    //alert($date+", "+$time);
-
-    xmlhttp.open("GET", "res_tables.php?d="+$date+"&t="+$time, true);
+    xmlhttp.open("GET", "include/res_tables.php?d="+$date+"&t="+$time, true);
     xmlhttp.send();
 };
 
@@ -45,7 +43,7 @@ function displayConfirmation(e) {
         if (this.readyState == 4 && this.status == 200){
             document.getElementById("regConfirm").innerHTML = this.responseText;
         }
-    }
+    };
 
     xmlhttp.send(params);
 
@@ -61,7 +59,7 @@ function getSelectedTables() {
     }
 
     return selectedTables;
-}
+};
 
 //solution found: http://jsfiddle.net/7dcuh/15/
 $(document).on('mouseenter', '.tableImage', function () {
@@ -75,7 +73,3 @@ $(document).on('mouseenter', '.tableImage', function () {
 }).on('click', '.tableImage', function () {
     $(this).toggleClass("selectedTable");
 });
-
-function jsTestFunction() {
-    return true;
-}
