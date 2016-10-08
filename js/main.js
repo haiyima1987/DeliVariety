@@ -161,16 +161,18 @@ $(document).ready(function () {
     }
 
     // task 6: toggle the reserved table color
+    // moved to reservation.js
+    /*
     var $table = $(".tableImage");
 
     // hover over and select tables
     $table.hover(function() {
         if ($(this).is(".selectedTable") === false){
-            $(this).attr('src', 'img/table_selected.jpg');
+            $(this).attr('src', 'img/table_selected.png');
         }
     }, function() {
         if ($(this).is(".selectedTable") === false) {
-            $(this).attr('src', 'img/table.jpg');
+            $(this).attr('src', 'img/table.png');
         }
     });
 
@@ -185,6 +187,7 @@ $(document).ready(function () {
         $(this).removeClass("selectedTable");
         $(this).one("click", selectSeats);
     }
+    */
 
     // task 7: show order list
     // variables for task 7
@@ -198,4 +201,17 @@ $(document).ready(function () {
         $payBox.fadeToggle($fadeInTime);
         e.preventDefault();
     }
+
+    //time input
+    $("#timeInput").timepicker({
+        'timeFormat': 'H:i',
+        //'minTime': '2:00pm',
+        //'maxTime': '11:30pm',
+        'scollDefault': 'now',
+        'forceRoundTime': true
+    });
+
+    $('#date').datepicker({
+        format: "yyyy-mm-dd"
+    });
 })
