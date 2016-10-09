@@ -12,7 +12,6 @@ if (!isset($_SESSION['user_id'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>DeliVariety</title>
     <meta charset="UTF-8">
@@ -20,7 +19,7 @@ if (!isset($_SESSION['user_id'])) {
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="css/stylesheet.css" rel="stylesheet">
@@ -29,36 +28,31 @@ if (!isset($_SESSION['user_id'])) {
 <body>
 <?php
 require_once('include/header.php');
+require_once('include/overlay.php');
+
+// temporarily post to menu.php, will make a payment page in the future
+if (!empty($_SESSION['box'])) {
+    if (isset($_POST["submit"])) {
+        foreach ($_POST['quantity'] as $key => $value) {
+            if ($value == 0) {
+                unset($_SESSION['box'][$key]);
+            } else {
+                $_SESSION['box'][$key]['quantity'] = $value;
+            }
+        }
+    }
+}
 ?>
 
-<!--overlay for the menu-->
-<div class="overlay">
-    <div class="btnClose col-md-4 col-sm-4 col-xs-4">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
-    <div class="navContainer col-md-4 col-sm-4 col-xs-4">
-        <ul class="navbar">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="#">Food Menu</a></li>
-            <li><a href="reservation.php">Reservation</a></li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-        <div class="btnRegOverlay">
-            <?php
-            if (isset($_SESSION['user_id'])) {
-                echo '<a href="logout.php">Log Out</a>';
-            } else {
-                echo '<a href="registration.php">Sign Up</a>' .
-                    '<a href="login.php">Log In</a>';
-            }
-            ?>
-        </div>
-    </div>
+<div class="lunchBox col-sm-1">
+</div>
+
+<!--lunch box pop up window-->
+<div class="payBox col-md-6 col-sm-10">
 </div>
 
 <?php
-require_once('products.php');
-require_once('lunchbox.php');
+require_once('include/products.php');
 require_once('include/footer.php');
 ?>
 

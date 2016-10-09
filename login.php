@@ -18,6 +18,7 @@
 
 <?php
 require_once('include/header_signup_login.php');
+require_once('include/overlay.php');
 require_once('include/connectvars.php');
 session_start();
 $error_msg = "";
@@ -94,47 +95,8 @@ if (empty($_SESSION['user_id'])) {
 } else {
     echo '<div class="alert alert-success col-md-offset-3 col-md-6">' . 'Welcome back! ' . $_SESSION['username'] . '</div>';
 }
+require_once('include/footer.php');
 ?>
-
-<div id="bottom" class="bottom">
-    <div class="social">
-        <div class="follow"><img src="img/logo_facebook.png" alt="facebook"></div>
-        <div class="follow"><img src="img/logo_instagram.png" alt="instagram"></div>
-        <div class="follow"><img src="img/logo_twitter.png" alt="twitter"></div>
-        <p>You are always welcomed to join us and follow us to get the latest offers</p>
-    </div>
-    <div class="copyright">
-        <p>© DeliVariety Food & Catering. All Rights Reserved.</p>
-    </div>
-</div>
-
-<div class="scrollUp">
-    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
-</div>
-
-<!--overlay for the menu-->
-<div class="overlay">
-    <div class="btnClose col-md-4 col-sm-4 col-xs-4">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
-    <div class="navContainer col-md-4 col-sm-4 col-xs-4">
-        <ul class="navbar">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="menu.php">Food Menu</a></li>
-            <li><a href="reservation.php">Reservation</a></li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-        <div class="btnRegOverlay">
-            <?php
-            if (isset($_SESSION['user_id'])) {
-                echo '<a href="logout.php">Log Out</a>';
-            } else {
-                echo '<a href="registration.php">Sign Up</a>';
-            }
-            ?>
-        </div>
-    </div>
-</div>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 <script src="js/main.js"></script>

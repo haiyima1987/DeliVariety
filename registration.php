@@ -27,9 +27,10 @@ if (!isset($_SESSION['user_id'])) {
 <body>
 
 <?php
-require_once ('include/header_signup_login.php');
+require_once('include/header_signup_login.php');
 require_once('include/connectvars.php');
 require_once('include/functions.php');
+require_once('include/overlay.php');
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
 
 if (isset($_POST["submit"])) {
@@ -175,33 +176,8 @@ if ($form_incomplete) {
     </div>
     <?php
 }
-
 require_once('include/footer.php');
 ?>
-
-<!--overlay for the menu-->
-<div class="overlay">
-    <div class="btnClose col-md-4 col-sm-4 col-xs-4">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
-    <div class="navContainer col-md-4 col-sm-4 col-xs-4">
-        <ul class="navbar">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="menu.php">Food Menu</a></li>
-            <li><a href="reservation.php">Reservation</a></li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-        <div class="btnRegOverlay">
-            <?php
-            if (isset($_SESSION['user_id'])) {
-                echo '<a href="logout.php">Log Out</a>';
-            } else {
-                echo '<a href="login.php">Log In</a>';
-            }
-            ?>
-        </div>
-    </div>
-</div>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 <script src="js/main.js"></script>

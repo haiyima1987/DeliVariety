@@ -23,10 +23,12 @@ if (!isset($_SESSION['user_id'])) {
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- jquery-timepicker -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css"
+          rel="stylesheet">
     <!-- bootstrap-datepicker-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
+          rel="stylesheet">
     <link href="css/stylesheet.css" rel="stylesheet">
 
     <script src="js/reservation.js"></script>
@@ -60,7 +62,8 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 </div>
 <?php
-require_once ('include/appvars.php');
+require_once('include/appvars.php');
+require_once('include/overlay.php');
 $current_time = date('H:i');
 $current_date = date('Y-m-d');
 ?>
@@ -71,7 +74,7 @@ $current_date = date('Y-m-d');
             <p>Tables loading...</p>
         </div>
         <?php
-        require_once ('include/reserve_form.php');
+        require_once('include/reserve_form.php');
         ?>
     </div>
 </div>
@@ -79,29 +82,6 @@ $current_date = date('Y-m-d');
 <?php
 require_once('include/footer.php');
 ?>
-
-<!--overlay for the menu-->
-<div class="overlay">
-    <div class="btnClose col-md-4 col-sm-4 col-xs-4">
-        <i class="fa fa-times" aria-hidden="true"></i>
-    </div>
-    <div class="navContainer col-md-4 col-sm-4 col-xs-4">
-        <ul class="navbar">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="menu.php">Food Menu</a></li>
-            <li><a href="#">Reservation</a></li>
-            <li><a href="contact.php">Contact</a></li>
-        </ul>
-        <div class="btnRegOverlay">
-            <a href="registration.php">Sign Up</a>
-            <a href="login.php">Log In</a>
-        </div>
-    </div>
-</div>
-
-<div class="scrollUp">
-    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
-</div>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 <script src="js/main.js"></script>

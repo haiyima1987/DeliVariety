@@ -26,7 +26,7 @@
     }
     .btnItemOrder {
       @include position(absolute, $right: 0, $bottom: 45px);
-      background-color: $main-green;
+      background-color: $order-orange;
       border: 1px solid $white;
       color: $clear-white;
       height: 35px;
@@ -49,6 +49,8 @@
     .btnItemPrice {
       @extend .btnItemOrder;
       @include position(absolute, $left: 0, $top: 0);
+      color: $light-dark-grey;
+      background: $main-green;
       &:hover {
         cursor: auto;
       }
@@ -67,6 +69,7 @@
 /*sing up form*/
 .signUpForm {
   padding: 50px;
+  margin-bottom: 100px;
 }
 
 /*align #bottom to the bottom since the page content isn't enough to push it down*/
@@ -83,27 +86,11 @@
 
 /*lunch box*/
 .lunchBox {
+  max-height: 500px;
+  overflow: auto;
   padding: 0;
-  @include position(fixed, $top:50px, $right: 20px);
+  @include position(fixed, $top: 40px, $right: 20px);
   z-index: 5;
-  .boxItem {
-    border: 1px solid $text-white;
-    background: $main-dark-grey;
-  }
-  .boxImg {
-    border: 1px solid $text-white;
-    padding: 0;
-    img {
-      width: 100%;
-    }
-  }
-  .boxText {
-    padding: 0;
-    h4 {
-      color: $text-white;
-      margin: 12px 0 0 10px;
-    }
-  }
   .btnGreen {
     padding: 0;
     a {
@@ -116,6 +103,52 @@
       }
     }
   }
+  .boxItem {
+    border: 1px solid $text-white;
+    background: $main-dark-grey;
+    position: relative;
+    height: 50px;
+  }
+  .boxImg {
+    border: 1px solid $text-white;
+    padding: 0;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .boxText {
+    padding: 0;
+    p {
+      @include position(absolute, $top: 50%, $left: 40%);
+      @include translate(-50%, -50%);
+      color: $text-white;
+      background: $order-list-grey;
+      padding: 5px;
+      z-index: 1;
+      font-weight: bold;
+    }
+  }
+  .btnItemChange {
+    padding: 0;
+    a {
+      display: block;
+      height: 25px;
+      width: 100%;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
+      i {
+        display: block;
+        @include position(absolute, $top: 50%, $left: 50%);
+        @include translate(-50%, -50%);
+        color: $order-orange;
+        font-size: 1.2em;
+      }
+    }
+  }
 }
 
 /*payment pop up page*/
@@ -125,9 +158,9 @@
   overflow: auto;
   @include position(absolute, $top: 50%, $left: 50%);
   @include translate(-50%, 0);
-  z-index: 5;
   background: $light-grey;
   padding: 10px;
+  z-index: 5;
   form {
     margin: 0;
     input[type=submit] {
@@ -142,7 +175,7 @@
   img {
     width: 100%;
   }
-  table>tbody>tr {
+  table > tbody > tr {
     text-align: right;
     .imgPayBox {
       width: 20%;
@@ -155,6 +188,12 @@
     a {
       width: auto;
       height: auto;
+    }
+  }
+  .payBoxClose {
+    font-size: 2.5em;
+    &:hover {
+      cursor: pointer;
     }
   }
 }

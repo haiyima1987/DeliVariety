@@ -200,7 +200,7 @@ p {
       position: absolute;
       right: 0;
       bottom: 45px;
-      background-color: #7ac943;
+      background-color: #f66e0a;
       border: 1px solid #ffffff;
       color: #efefef;
       height: 35px;
@@ -220,7 +220,9 @@ p {
     .menuCategory .menuItem .btnItemPrice {
       position: absolute;
       top: 0;
-      left: 0; }
+      left: 0;
+      color: #3a3a3a;
+      background: #7ac943; }
       .menuCategory .menuItem .btnItemPrice:hover {
         cursor: auto; }
 
@@ -232,7 +234,8 @@ p {
 
 /*sing up form*/
 .signUpForm {
-  padding: 50px; }
+  padding: 50px;
+  margin-bottom: 100px; }
 
 /*align #bottom to the bottom since the page content isn't enough to push it down*/
 #bottom {
@@ -247,24 +250,13 @@ p {
 
 /*lunch box*/
 .lunchBox {
+  max-height: 500px;
+  overflow: auto;
   padding: 0;
   position: fixed;
-  top: 50px;
+  top: 40px;
   right: 20px;
   z-index: 5; }
-  .lunchBox .boxItem {
-    border: 1px solid #dedede;
-    background: #1a1a1a; }
-  .lunchBox .boxImg {
-    border: 1px solid #dedede;
-    padding: 0; }
-    .lunchBox .boxImg img {
-      width: 100%; }
-  .lunchBox .boxText {
-    padding: 0; }
-    .lunchBox .boxText h4 {
-      color: #dedede;
-      margin: 12px 0 0 10px; }
   .lunchBox .btnGreen {
     padding: 0; }
     .lunchBox .btnGreen a {
@@ -274,6 +266,55 @@ p {
       padding: 5px; }
       .lunchBox .btnGreen a:hover {
         cursor: pointer; }
+  .lunchBox .boxItem {
+    border: 1px solid #dedede;
+    background: #1a1a1a;
+    position: relative;
+    height: 50px; }
+  .lunchBox .boxImg {
+    border: 1px solid #dedede;
+    padding: 0;
+    height: 100%; }
+    .lunchBox .boxImg img {
+      width: 100%;
+      height: 100%; }
+  .lunchBox .boxText {
+    padding: 0; }
+    .lunchBox .boxText p {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      color: #dedede;
+      background: rgba(26, 26, 26, 0.8);
+      padding: 5px;
+      z-index: 1;
+      font-weight: bold; }
+  .lunchBox .btnItemChange {
+    padding: 0; }
+    .lunchBox .btnItemChange a {
+      display: block;
+      height: 25px;
+      width: 100%;
+      position: relative; }
+      .lunchBox .btnItemChange a:hover {
+        cursor: pointer; }
+      .lunchBox .btnItemChange a i {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: #f66e0a;
+        font-size: 1.2em; }
 
 /*payment pop up page*/
 .payBox {
@@ -288,9 +329,9 @@ p {
   -ms-transform: translate(-50%, 0);
   -o-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
-  z-index: 5;
   background: #d3d3d3;
-  padding: 10px; }
+  padding: 10px;
+  z-index: 5; }
   .payBox form {
     margin: 0; }
     .payBox form input[type=submit] {
@@ -311,6 +352,10 @@ p {
   .payBox .btnGreen a {
     width: auto;
     height: auto; }
+  .payBox .payBoxClose {
+    font-size: 2.5em; }
+    .payBox .payBoxClose:hover {
+      cursor: pointer; }
 
 /*contact page*/
 .contactInfo p, .contactInfo h3 {
@@ -713,7 +758,3 @@ p {
     position: static; } }
 
 /*# sourceMappingURL=stylesheet.css.map */
-
-#timeInput {
-  width: 100%;
-}

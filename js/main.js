@@ -163,43 +163,57 @@ $(document).ready(function () {
     // task 6: toggle the reserved table color
     // moved to reservation.js
     /*
-    var $table = $(".tableImage");
+     var $table = $(".tableImage");
 
-    // hover over and select tables
-    $table.hover(function() {
-        if ($(this).is(".selectedTable") === false){
-            $(this).attr('src', 'img/table_selected.png');
-        }
-    }, function() {
-        if ($(this).is(".selectedTable") === false) {
-            $(this).attr('src', 'img/table.png');
-        }
-    });
+     // hover over and select tables
+     $table.hover(function() {
+     if ($(this).is(".selectedTable") === false){
+     $(this).attr('src', 'img/table_selected.png');
+     }
+     }, function() {
+     if ($(this).is(".selectedTable") === false) {
+     $(this).attr('src', 'img/table.png');
+     }
+     });
 
-    $table.one("click", selectSeats);
+     $table.one("click", selectSeats);
 
-    function selectSeats() {
-        $(this).addClass("selectedTable");
-        $(this).one("click", deselectSeats);
-    }
+     function selectSeats() {
+     $(this).addClass("selectedTable");
+     $(this).one("click", deselectSeats);
+     }
 
-    function deselectSeats() {
-        $(this).removeClass("selectedTable");
-        $(this).one("click", selectSeats);
-    }
-    */
+     function deselectSeats() {
+     $(this).removeClass("selectedTable");
+     $(this).one("click", selectSeats);
+     }
+     */
 
-    // task 7: show order list
-    // variables for task 7
-    var $btnList = $("#btnList");
+    // task 8: send ajax with jquery
+    var $btnOrder = $(".btnItemOrder");
+    var $lunchBox = $(".lunchBox");
     var $payBox = $(".payBox");
+    var $lunchBoxPage = "include/lunchbox.php";
+    var $payBoxPage = "include/paybox.php";
     var $fadeInTime = 200;
-    $btnList.on('click', toggleOrderList);
 
-    // show order list
-    function toggleOrderList(e) {
-        $payBox.fadeToggle($fadeInTime);
-        e.preventDefault();
+    loadLunchBox();
+
+    $btnOrder.on('click', loadLunchBox);
+
+    function loadLunchBox() {
+        console.log("loading");
+        $.get(
+            $lunchBoxPage,
+            {
+                action: $(this).attr('action'),
+                id: $(this).attr('id')
+            },
+            function (response) {
+                $lunchBox.hide().html(response).fadeIn($fadeInTime);
+                $payBox.load($payBoxPage);
+            }
+        );
     }
 
     //time input
