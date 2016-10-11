@@ -49,7 +49,7 @@ for($x = 0; $x < count($stmt_array); $x++){
 for($row = 0; $row < count($table_shape); $row++){
     echo '<div class="seatingRow row">';
     for($col = 0; $col < count($table_shape[$row]); $col++){
-        echo '<div class="seatingElement col-md-3">';
+        echo '<div class="seatingElement col-xs-3">';
         switch ($table_shape[$row][$col]){
             case 0:
                 break;

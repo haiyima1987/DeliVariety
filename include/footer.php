@@ -1,3 +1,11 @@
+<!--newsletter submission-->
+<div class="newsletter">
+    <h3>We offer the best varieties and services for you to enjoy</h3>
+    <p>Stay up-to-date with our newest varieties, upcoming events, specials and promotions</p>
+    <input type="email" name="email" value="">
+    <input type="submit" name="submit" value="SIGN UP">
+</div>
+
 <div class="bottom">
     <div class="social">
         <div class="follow"><img src="img/logo_facebook.png" alt="facebook"></div>

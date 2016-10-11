@@ -37,7 +37,7 @@ if (!isset($_SESSION['user_id'])) {
                     <button class="labelMenu" type="button">MENU</button>
                 </div>
             </div>
-            <div class="btnRegister col-md-5 col-xs-5 pull-right">
+            <div class="btnRegister col-lg-3 col-md-4 col-sm-5 col-xs-5 pull-right">
                 <?php
                 if (isset($_SESSION['user_id'])) {
                     echo '<p>Welcome back! Now order with 10% discount!</p>' .
@@ -76,7 +76,7 @@ if (!isset($_SESSION['user_id'])) {
                 <h1>Welcome to DeliVariety</h1>
                 <h3>Delivery & Variety</h3>
             </div>
-            <div id="btnOrder" class="btnGreen col-md-5 col-sm-6  col-xs-6">
+            <div id="btnOrder" class="btnGreen col-md-5 col-sm-6 col-xs-6">
                 <a href="menu.php">MENU & ONLINE ORDER</a>
             </div>
         </div>
@@ -134,14 +134,6 @@ require_once('include/overlay.php');
             </a>
         </div>
     </div>
-</div>
-
-<!--newsletter submission-->
-<div class="newsletter">
-    <h3>We offer the best varieties and services for you to enjoy</h3>
-    <p>Stay up-to-date with our newest varieties, upcoming events, specials and promotions</p>
-    <input type="email" name="email" value="">
-    <input type="submit" name="submit" value="SIGN UP">
 </div>
 
 <?php

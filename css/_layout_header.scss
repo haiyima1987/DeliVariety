@@ -75,7 +75,7 @@
 
 /*register buttons*/
 .btnRegister {
-  @include position(absolute, $top: 20%, $right: 0);
+  @include position(absolute, $bottom: 0, $right: 0);
   p {
     width: 50%;
     @include position(relative, $bottom: -8px);

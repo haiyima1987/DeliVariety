@@ -78,8 +78,8 @@ p {
 /*register buttons*/
 .btnRegister, .btnOtherRegister, .overlay .btnRegOverlay {
   position: absolute;
-  top: 20%;
-  right: 0; }
+  right: 0;
+  bottom: 0; }
   .btnRegister p, .btnOtherRegister p, .overlay .btnRegOverlay p {
     width: 50%;
     position: relative;
@@ -199,7 +199,7 @@ p {
     .menuCategory .menuItem .btnItemOrder, .menuCategory .menuItem .btnItemPrice {
       position: absolute;
       right: 0;
-      bottom: 45px;
+      bottom: 47px;
       background-color: #f66e0a;
       border: 1px solid #efefef;
       color: #efefef;
@@ -215,8 +215,9 @@ p {
       height: 45px;
       text-align: center;
       color: #1a1a1a;
-      padding: 0;
-      margin: 0; }
+      padding: 1px;
+      margin: 0;
+      border: 1px solid #696969; }
     .menuCategory .menuItem .btnItemPrice {
       position: absolute;
       top: 0;
@@ -579,7 +580,7 @@ p {
     padding: 10px;
     color: #1a1a1a; }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 479px) {
   .header, .otherHeader {
     background: url(../img/background_small.png) no-repeat center;
     background-size: cover; }
@@ -654,6 +655,9 @@ p {
   .reserveForm .control-label {
     text-align: right; }
 
+  .seatingElement {
+    padding: 0; }
+
   .signUpForm {
     width: 100%;
     margin: 0; }
@@ -684,7 +688,7 @@ p {
 
   .payBox table > tbody > tr > td {
     padding: 2px; } }
-@media only screen and (min-width: 481px) and (max-width: 640px) {
+@media only screen and (min-width: 480px) and (max-width: 639px) {
   .shape {
     height: 420px; }
 
@@ -783,7 +787,7 @@ p {
 
   .lunchBoxLogo {
     display: block; } }
-@media only screen and (min-width: 641px) and (max-width: 767px) {
+@media only screen and (min-width: 640px) and (max-width: 767px) {
   .header, .otherHeader {
     background: url(../img/background_small.png) no-repeat center;
     background-size: cover; }

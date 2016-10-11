@@ -25,7 +25,7 @@
       width: 100%;
     }
     .btnItemOrder {
-      @include position(absolute, $right: 0, $bottom: 45px);
+      @include position(absolute, $right: 0, $bottom: 47px);
       background-color: $order-orange;
       border: 1px solid $clear-white;
       color: $clear-white;
@@ -43,8 +43,9 @@
       height: 45px;
       text-align: center;
       color: $main-dark-grey;
-      padding: 0;
+      padding: 1px;
       margin: 0;
+      border: 1px solid $dim-grey;
     }
     .btnItemPrice {
       @extend .btnItemOrder;
