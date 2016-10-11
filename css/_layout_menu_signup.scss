@@ -17,7 +17,7 @@
     text-align: left;
     font-size: 1.3em;
     margin: 0;
-    color: $white;
+    color: $clear-white;
   }
   .menuItem {
     padding: 2px;
@@ -27,7 +27,7 @@
     .btnItemOrder {
       @include position(absolute, $right: 0, $bottom: 45px);
       background-color: $order-orange;
-      border: 1px solid $white;
+      border: 1px solid $clear-white;
       color: $clear-white;
       height: 35px;
       width: 70px;
@@ -89,7 +89,7 @@
   max-height: 500px;
   overflow: auto;
   padding: 0;
-  @include position(fixed, $top: 40px, $right: 20px);
+  @include position(fixed, $top: 120px, $right: 20px);
   z-index: 5;
   .btnGreen {
     padding: 0;
@@ -175,13 +175,13 @@
   img {
     width: 100%;
   }
-  table > tbody > tr {
+  table>tbody>tr {
     text-align: right;
     .imgPayBox {
       width: 20%;
     }
     input {
-      width: 30%;
+      width: 50%;
     }
   }
   .btnGreen {

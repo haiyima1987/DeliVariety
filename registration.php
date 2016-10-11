@@ -31,30 +31,32 @@ require_once('include/header_signup_login.php');
 require_once('include/connectvars.php');
 require_once('include/functions.php');
 require_once('include/overlay.php');
-$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) or die('Error connecting to MySQL server.');
+require_once('class/dbhelper.php');
+
+$dbc_helper = new DbcHelper(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 if (isset($_POST["submit"])) {
-    $first_name = mysqli_real_escape_string($dbc, $_POST['firstName']);
-    $last_name = mysqli_real_escape_string($dbc, $_POST['lastName']);
-    $birthday = mysqli_real_escape_string($dbc, $_POST['bday']);
-    $gender = mysqli_real_escape_string($dbc, $_POST['gender']);
-    $user_name = mysqli_real_escape_string($dbc, $_POST['username']);
-    $password1 = mysqli_real_escape_string($dbc, $_POST['password1']);
-    $password2 = mysqli_real_escape_string($dbc, $_POST['password2']);
-    $email = mysqli_real_escape_string($dbc, $_POST['email']);
-    $phone = mysqli_real_escape_string($dbc, $_POST['phone']);
+    $last_name = $_POST['lastName'];
+    $user_name = $_POST['username'];
+    $password1 = $_POST['password1'];
+    $password2 = $_POST['password2'];
+    $email = $_POST['email'];
+    $birthday = isset($_POST['bday']) ? $_POST['bday'] : null;
+    $gender = isset($_POST['gender']) ? $_POST['gender'] : null;
+    $phone = isset($_POST['phone']) ? $_POST['phone'] : null;
+    $first_name = isset($_POST['firstName']) ? $_POST['firstName'] : null;
     $form_incomplete = false;
 
     if (!empty($last_name) && !empty($user_name) && !empty($password1) && !empty($password2) && !empty($email) && ($password1 == $password2)) {
-        $query = "SELECT * FROM dv_user WHERE username = '$user_name'";
-        $data = mysqli_query($dbc, $query);
+        $query = "SELECT COUNT(*) FROM dv_user WHERE username = '$user_name'";
+        $row = $dbc_helper->selectUpdateData($query);
 
-        if (mysqli_num_rows($data) == 0) {
+        if ($row->fetchColumn() == 0) {
             do {
                 $user_id = generateRandomString();
                 $query = "INSERT INTO dv_user (user_id, firstname, lastname, birthday, gender, username, password, email, phone)" .
                     "VALUES ('$user_id', '$first_name', '$last_name', '$birthday', '$gender', '$user_name', sha1('$password1'), '$email', '$phone')";
-                $result = mysqli_query($dbc, $query);
+                $result = $dbc_helper->insertDeleteData($query);
             } while (!$result);
 
             // after registering, automatically sign in
@@ -78,7 +80,6 @@ if (isset($_POST["submit"])) {
             <?php
             // you can redirect by JavaScript
             // echo "<script>setTimeout(\"location.href = 'http://www.google.com';\",1500);</script>";
-            mysqli_close($dbc);
         } else {
             $form_incomplete = true;
             echo '<div class="alert alert-danger col-md-offset-3 col-md-6">An account with the same name exists, please use another name.</div>';
@@ -178,6 +179,13 @@ if ($form_incomplete) {
 }
 require_once('include/footer.php');
 ?>
+
+<div class="lunchBox col-xs-2 col-sm-1">
+</div>
+
+<!--lunch box pop up window-->
+<div class="payBox col-md-6 col-sm-8 col-xs-10">
+</div>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 <script src="js/main.js"></script>

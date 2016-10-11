@@ -33,11 +33,11 @@
   width: 100%;
   height: 100%;
   display: none;
-  z-index: 2;
+  z-index: 10;
 
   .btnClose {
     font-size: 400%;
-    color: $white;
+    color: $clear-white;
     text-align: center;
     margin-top: 40px;
     &:hover {
@@ -170,6 +170,20 @@
   }
   i {
     font-size: 60px;
+  }
+}
+
+/*the lunch box logo to hide lunch box list*/
+.lunchBoxLogo {
+  @include position(fixed, $right: 8%, $top: 2%);
+  font-size: 300%;
+  color: $clear-white;
+  display: none;
+  z-index: 5;
+  opacity: 0.6;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
   }
 }
 

@@ -1,15 +1,15 @@
 <!--post request to order and pay-->
 <?php
 session_start();
-require_once('include/appvars.php');
-require_once('include/connectvars.php');
-require_once('class/dbhelper.php');
+require_once('appvars.php');
+require_once('connectvars.php');
+require_once('../class/dbhelper.php');
 
 $dbc_helper = new DbcHelper(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 ?>
 
-<form method="post" action="../menu.php">
+<form method="post" action="menu.php">
     <table class="table table-striped">
         <thead>
         <tr>
@@ -39,7 +39,7 @@ $dbc_helper = new DbcHelper(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                 <tr>
                     <th><?php echo $index ?></th>
                     <td class="imgPayBox"><img src="<?php echo DV_UPLOADPATH . $row['item_img'] ?>" alt=""></td>
-                    <td><input type="number" name="quantity[<?php echo $row['item_id'] ?>]" size="2"
+                    <td><input type="number" name="quantity[<?php echo $row['item_id'] ?>]" size="5"
                                value="<?php echo $_SESSION['box'][$row['item_id']]['quantity'] ?>" min="0"></td>
                     <td>€<?php echo $row['price'] ?></td>
                     <td>€<?php echo $subtotal ?></td>
@@ -49,9 +49,12 @@ $dbc_helper = new DbcHelper(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
             }
             ?>
             <tr>
-                <td colspan="5">Total Price: <?php echo $total_price ?></td>
+                <td colspan="5">Total Price: €<?php echo number_format($total_price, 2) ?></td>
             </tr>
             <?php
+            if (isset($_SESSION['user_id'])) {
+                echo '<tr><td colspan="5"><strong>Total Price with Discount: €' . number_format($total_price * 0.9, 2) . '</strong></td></tr>';
+            }
         }
         ?>
         </tbody>
@@ -62,4 +65,4 @@ $dbc_helper = new DbcHelper(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     <input type="submit" name="submit" value="ORDER">
 </form>
 
-<script src="../js/paybox.js"></script>
+<script src="js/paybox.js"></script>

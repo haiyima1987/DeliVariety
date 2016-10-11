@@ -58,9 +58,7 @@ if (!isset($_SESSION['user_id'])) {
         }
     }
 }
-?>
 
-<?php
 if (empty($_SESSION['user_id'])) {
     ?>
     <!--login form-->
@@ -97,6 +95,13 @@ if (empty($_SESSION['user_id'])) {
 }
 require_once('include/footer.php');
 ?>
+
+<div class="lunchBox col-xs-2 col-sm-1">
+</div>
+
+<!--lunch box pop up window-->
+<div class="payBox col-md-6 col-sm-8 col-xs-10">
+</div>
 
 <script src="https://use.fontawesome.com/5a79a0d633.js"></script>
 <script src="js/main.js"></script>

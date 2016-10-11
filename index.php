@@ -37,7 +37,7 @@ if (!isset($_SESSION['user_id'])) {
                     <button class="labelMenu" type="button">MENU</button>
                 </div>
             </div>
-            <div class="btnRegister col-md-4 pull-right">
+            <div class="btnRegister col-md-5 col-xs-5 pull-right">
                 <?php
                 if (isset($_SESSION['user_id'])) {
                     echo '<p>Welcome back! Now order with 10% discount!</p>' .
@@ -81,6 +81,13 @@ if (!isset($_SESSION['user_id'])) {
             </div>
         </div>
     </div>
+</div>
+
+<div class="lunchBox col-xs-2 col-sm-1">
+</div>
+
+<!--lunch box pop up window-->
+<div class="payBox col-md-6 col-sm-8 col-xs-10">
 </div>
 
 <?php
@@ -127,6 +134,14 @@ require_once('include/overlay.php');
             </a>
         </div>
     </div>
+</div>
+
+<!--newsletter submission-->
+<div class="newsletter">
+    <h3>We offer the best varieties and services for you to enjoy</h3>
+    <p>Stay up-to-date with our newest varieties, upcoming events, specials and promotions</p>
+    <input type="email" name="email" value="">
+    <input type="submit" name="submit" value="SIGN UP">
 </div>
 
 <?php

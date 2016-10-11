@@ -148,9 +148,9 @@ p {
 
 /*3 pictures with buttons below view location button*/
 .menuWarp :first-child {
-  border-left: 12px solid #ffffff; }
+  border-left: 12px solid #efefef; }
 .menuWarp :last-child {
-  border-right: 12px solid #ffffff; }
+  border-right: 12px solid #efefef; }
 
 /*item in each picture*/
 .bigMenuItem {
@@ -158,7 +158,7 @@ p {
   padding: 0;
   border-width: 12px 6px;
   border-style: solid;
-  border-color: #ffffff;
+  border-color: #efefef;
   position: relative; }
   .bigMenuItem img {
     width: 100%;
@@ -191,7 +191,7 @@ p {
     text-align: left;
     font-size: 1.3em;
     margin: 0;
-    color: #ffffff; }
+    color: #efefef; }
   .menuCategory .menuItem {
     padding: 2px; }
     .menuCategory .menuItem img {
@@ -201,7 +201,7 @@ p {
       right: 0;
       bottom: 45px;
       background-color: #f66e0a;
-      border: 1px solid #ffffff;
+      border: 1px solid #efefef;
       color: #efefef;
       height: 35px;
       width: 70px;
@@ -254,7 +254,7 @@ p {
   overflow: auto;
   padding: 0;
   position: fixed;
-  top: 40px;
+  top: 120px;
   right: 20px;
   z-index: 5; }
   .lunchBox .btnGreen {
@@ -348,7 +348,7 @@ p {
     .payBox table > tbody > tr .imgPayBox {
       width: 20%; }
     .payBox table > tbody > tr input {
-      width: 30%; }
+      width: 50%; }
   .payBox .btnGreen a {
     width: auto;
     height: auto; }
@@ -391,12 +391,12 @@ p {
   width: 100%;
   height: 100%;
   display: none;
-  z-index: 2;
+  z-index: 10;
   /*navbar inside the menu*/
   /*overlay buttons*/ }
   .overlay .btnClose {
     font-size: 400%;
-    color: #ffffff;
+    color: #efefef;
     text-align: center;
     margin-top: 40px; }
     .overlay .btnClose:hover {
@@ -505,6 +505,20 @@ p {
   .scrollUp i {
     font-size: 60px; }
 
+/*the lunch box logo to hide lunch box list*/
+.lunchBoxLogo {
+  position: fixed;
+  top: 2%;
+  right: 8%;
+  font-size: 300%;
+  color: #efefef;
+  display: none;
+  z-index: 5;
+  opacity: 0.6; }
+  .lunchBoxLogo:hover {
+    cursor: pointer;
+    opacity: 1; }
+
 .seatingElement:hover {
   cursor: pointer; }
 .seatingElement img {
@@ -514,7 +528,7 @@ p {
 .newsletter {
   clear: left;
   text-align: center;
-  margin: 40px 0 50px; }
+  margin: 100px 0; }
   .newsletter h3 {
     color: #7ac943;
     font-family: "brandon-grotesque", Helvetica, sans-serif; }
@@ -565,16 +579,12 @@ p {
     padding: 10px;
     color: #1a1a1a; }
 
-/*0 - 480 and 480 - 640 can be combined to one query on this site
 @media only screen and (max-width: 480px) {
-
-}*/
-@media only screen and (max-width: 640px) {
   .header, .otherHeader {
     background: url(../img/background_small.png) no-repeat center;
     background-size: cover; }
     .shape {
-      height: 420px; }
+      height: 360px; }
 
   .otherHeader {
     background: url(../img/restaurant_overview.png) no-repeat center;
@@ -662,7 +672,117 @@ p {
     display: none; }
 
   .carouselBtns {
-    display: none; } }
+    display: none; }
+
+  .lunchBox {
+    position: fixed;
+    top: 80px;
+    width: 30%; }
+
+  .lunchBoxLogo {
+    display: block; }
+
+  .payBox table > tbody > tr > td {
+    padding: 2px; } }
+@media only screen and (min-width: 481px) and (max-width: 640px) {
+  .shape {
+    height: 420px; }
+
+  .otherHeader {
+    background: url(../img/restaurant_overview.png) no-repeat center;
+    background-size: cover;
+    height: 120px; }
+    .otherHeader h5 {
+      font-size: 1.4em;
+      position: static;
+      width: 100%; }
+
+  .banner, .otherBanner {
+    height: 16%; }
+    .banner .logoMenu img, .otherBanner .logoMenu img {
+      display: none; }
+
+  .otherBanner {
+    height: 50%; }
+    .otherBanner .logoMenu img {
+      display: none; }
+
+  .btnMenu {
+    position: relative;
+    top: 10px;
+    font-size: 1.2em; }
+    .btnMenu .labelMenu {
+      display: none; }
+
+  .mainText .introText {
+    width: 65%;
+    position: absolute;
+    top: 35%;
+    right: 32%; }
+  .mainText #btnOrder {
+    position: absolute;
+    top: 75%;
+    right: 110px; }
+
+  .secondary h3 {
+    font-size: 1.2em;
+    margin: 10px auto 0; }
+  .secondary p {
+    margin: 0 auto; }
+
+  .bigMenuItem {
+    height: 320px;
+    width: 100%; }
+    .bigMenuItem .bigMenuText {
+      position: absolute;
+      top: 30%; }
+      .bigMenuItem .bigMenuText h2 {
+        font-size: 1.2em; }
+
+  .btnRegister, .btnOtherRegister, .overlay .btnRegOverlay {
+    display: none; }
+
+  .contentWrapper {
+    padding: 20px 10px 20px 10px; }
+
+  .social .follow img {
+    width: 10%; }
+
+  #bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+
+  .reserveForm .control-label {
+    text-align: right; }
+
+  .signUpForm {
+    width: 100%;
+    margin: 0; }
+
+  .overlay .navContainer {
+    width: 100%; }
+  .overlay .btnClose {
+    width: 100%;
+    margin: 0; }
+  .overlay .btnRegOverlay {
+    display: block; }
+  .overlay .navbar {
+    margin: 0; }
+
+  .pageDot {
+    display: none; }
+
+  .carouselBtns {
+    display: none; }
+
+  .lunchBox {
+    position: fixed;
+    top: 80px;
+    width: 25%; }
+
+  .lunchBoxLogo {
+    display: block; } }
 @media only screen and (min-width: 641px) and (max-width: 767px) {
   .header, .otherHeader {
     background: url(../img/background_small.png) no-repeat center;

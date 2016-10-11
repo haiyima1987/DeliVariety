@@ -9,7 +9,7 @@
                     <button class="labelMenu" type="button">MENU</button>
                 </div>
             </div>
-            <div class="btnRegister col-md-4 pull-right">
+            <div class="btnRegister col-md-5 col-xs-5 pull-right">
                 <?php
                 if (isset($_SESSION['user_id'])) {
                     echo '<p>Welcome back! Now order with 10% discount!</p>' .

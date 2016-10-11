@@ -10,6 +10,10 @@
     </div>
 </div>
 
+<div class="lunchBoxLogo">
+    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+</div>
+
 <div class="scrollUp">
     <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
 </div>

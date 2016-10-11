@@ -31,6 +31,13 @@ require_once('include/header.php');
 require_once('include/overlay.php');
 ?>
 
+<div class="lunchBox col-xs-2 col-sm-1">
+</div>
+
+<!--lunch box pop up window-->
+<div class="payBox col-md-6 col-sm-8 col-xs-10">
+</div>
+
 <!--google-maps and contact info-->
 <div class="contentWrapper">
     <div class="contentContact row">

@@ -49,10 +49,10 @@ if (isset($_SESSION['box']) && !empty($_SESSION['box'])) {
             <div class="boxText">
                 <p><?php echo $_SESSION['box'][$row['item_id']]['quantity'] ?></p>
             </div>
-            <div class="boxImg col-sm-9">
+            <div class="boxImg col-xs-9 col-sm-9">
                 <img src="<?php echo DV_UPLOADPATH . $row['item_img'] ?>" alt="">
             </div>
-            <div class="btnItemChange col-sm-3">
+            <div class="btnItemChange col-xs-3 col-sm-3">
                 <a class="btnPlus" id="<?php echo $row['item_id'] ?>" action="add"">
                 <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
                 <a class="btnMinus" id="<?php echo $row['item_id'] ?>" action="minus"">
@@ -69,4 +69,4 @@ if (isset($_SESSION['box']) && !empty($_SESSION['box'])) {
 }
 ?>
 
-<script src="../js/lunchbox.js"></script>
+<script src="js/lunchbox.js"></script>

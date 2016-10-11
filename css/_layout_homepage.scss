@@ -52,10 +52,10 @@
 /*3 pictures with buttons below view location button*/
 .menuWarp {
   :first-child {
-    border-left: 12px solid $white;
+    border-left: 12px solid $clear-white;
   }
   :last-child {
-    border-right: 12px solid $white;
+    border-right: 12px solid $clear-white;
   }
 }
 
@@ -65,7 +65,7 @@
   padding: 0;
   border-width: 12px 6px;
   border-style: solid;
-  border-color: $white;
+  border-color: $clear-white;
   position: relative;
   img {
     width: 100%;

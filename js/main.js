@@ -216,6 +216,16 @@ $(document).ready(function () {
         );
     }
 
+    // hide the order list by clicking the lunch box logo
+    var $lunchBoxLogo = $(".lunchBoxLogo");
+
+    $lunchBoxLogo.on('click', toggleOrderList);
+
+    function toggleOrderList(e) {
+        e.preventDefault();
+        $lunchBox.fadeToggle($fadeInTime);
+    }
+
     //time input
     $("#timeInput").timepicker({
         'timeFormat': 'H:i',

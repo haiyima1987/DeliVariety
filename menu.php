@@ -44,11 +44,11 @@ if (!empty($_SESSION['box'])) {
 }
 ?>
 
-<div class="lunchBox col-sm-1">
+<div class="lunchBox col-xs-2 col-sm-1">
 </div>
 
 <!--lunch box pop up window-->
-<div class="payBox col-md-6 col-sm-10">
+<div class="payBox col-md-6 col-sm-8 col-xs-10">
 </div>
 
 <?php

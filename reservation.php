@@ -79,6 +79,13 @@ $current_date = date('Y-m-d');
     </div>
 </div>
 
+<div class="lunchBox col-xs-2 col-sm-1">
+</div>
+
+<!--lunch box pop up window-->
+<div class="payBox col-md-6 col-sm-8 col-xs-10">
+</div>
+
 <?php
 require_once('include/footer.php');
 ?>
