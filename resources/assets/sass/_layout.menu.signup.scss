@@ -1,0 +1,232 @@
+/*menu content background and outline*/
+.contentWrapper {
+  background: url(../img/background_texture.png) repeat;
+  padding: 4% 6% 8% 6%;
+  .content {
+    margin: 0 auto;
+  }
+}
+
+/*menu category and each menu item*/
+.menuCategory {
+  margin: 2% 0 0 0;
+  border: 2px solid $main-green;
+  @include box-shadow(5px, 5px, 15px, $shadow-grey);
+  h3 {
+    background: $main-green;
+    padding: 8px 8px 8px 16px;
+    text-align: left;
+    font-size: 1.3em;
+    margin: 0;
+    color: $clear-white;
+  }
+}
+
+.menuItem {
+  padding: 2px;
+  img {
+    width: 100%;
+  }
+  .btnItemOrder {
+    @include position(absolute, $right: 2px, $bottom: 47px);
+    background-color: $order-orange;
+    border: 1px solid $clear-white;
+    color: $clear-white;
+    height: 35px;
+    width: 70px;
+    text-align: center;
+    padding-top: 6px;
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+      border: 2px solid $order-orange;
+    }
+  }
+  p {
+    background: transparent;
+    height: 45px;
+    text-align: center;
+    color: $main-dark-grey;
+    padding: 1px;
+    margin: 0;
+    border: 1px solid $dim-grey;
+  }
+  .btnItemPrice {
+    @extend .btnItemOrder;
+    @include position(absolute, $left: 1px, $top: 1px);
+    color: $light-dark-grey;
+    background: $main-green;
+    &:hover {
+      cursor: auto;
+      border: 1px solid $clear-white;
+    }
+  }
+}
+
+/*categories with a dark header*/
+.darkMenuBar {
+  border: 2px solid $light-dark-grey;
+  h3 {
+    background: $light-dark-grey;
+  }
+}
+
+/*sign up form*/
+.formWrapper {
+  background: url(../img/background_texture.png) repeat;
+  .signUpForm {
+    padding: 50px 20px;
+    margin-bottom: 100px;
+    .form-group {
+      margin-bottom: 5px;
+    }
+    .form-check {
+      margin-bottom: 5px;
+    }
+    label {
+      margin-top: 7px;
+    }
+  }
+}
+
+.btnSignUpLogIn {
+  background: $main-green;
+  border: 2px solid $clear-white;
+  &:hover {
+    background: $main-green;
+    border: 2px solid $clear-white;
+  }
+}
+
+/*align #bottom to the bottom since the page content isn't enough to push it down*/
+#bottom {
+  @include position(absolute, $bottom: 0);
+  width: 100%
+}
+
+/*confirm use has signed up*/
+.confirm {
+  margin-top: 50px;
+  padding: 10px;
+  .btnGreen {
+    a {
+      margin: 0 auto;
+    }
+  }
+}
+
+/*order list*/
+.orderList {
+  max-height: 400px;
+  overflow: auto;
+  padding: 0;
+  @include position(fixed, $top: 120px, $right: 20px);
+  z-index: 20;
+  .btnGreen {
+    padding: 0;
+    a {
+      font: 1em Verdana, Geneva, Tahoma, sans-serif;
+      width: auto;
+      height: auto;
+      padding: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .boxItem {
+    border: 1px solid $text-white;
+    background: $main-dark-grey;
+    position: relative;
+    height: 50px;
+  }
+  .boxImg {
+    border: 1px solid $text-white;
+    padding: 0;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .boxText {
+    padding: 0;
+    p {
+      @include position(absolute, $top: 50%, $left: 40%);
+      @include translate(-50%, -50%);
+      color: $text-white;
+      background: $order-list-grey;
+      padding: 5px;
+      z-index: 1;
+      font-weight: bold;
+    }
+  }
+  .btnItemChange {
+    padding: 0;
+    a {
+      display: block;
+      height: 25px;
+      width: 100%;
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
+      i {
+        display: block;
+        @include position(absolute, $top: 50%, $left: 50%);
+        @include translate(-50%, -50%);
+        color: $order-orange;
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+/*payment pop up page*/
+.payBox {
+  display: none;
+  max-height: 900px;
+  overflow: auto;
+  background: $light-grey;
+  padding: 10px;
+  z-index: 30;
+  @include border-radius(5px);
+  form {
+    margin: 0;
+    input[type=submit] {
+      background: $main-green;
+      border: 2px solid $clear-white;
+      padding: 10px;
+      font: 1.2em Verdana, Geneva, Tahoma, sans-serif;
+      color: $clear-white;
+      float: right;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  img {
+    width: 100%;
+  }
+  table > tbody > tr {
+    text-align: right;
+    .imgPayBox {
+      width: 20%;
+    }
+    input {
+      width: 50%;
+    }
+  }
+  .btnGreen {
+    a {
+      width: auto;
+      height: auto;
+    }
+  }
+  .payBoxClose {
+    font-size: 2.5em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

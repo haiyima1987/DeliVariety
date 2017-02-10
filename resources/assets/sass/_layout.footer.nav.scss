@@ -1,0 +1,68 @@
+/*newsletter content below the 3 pictures on the home page*/
+.newsletter {
+  clear: left;
+  text-align: center;
+  margin: 100px 0;
+  h3 {
+    color: $main-green;
+    font-family: "brandon-grotesque", Helvetica, sans-serif;
+  }
+  input[type=email] {
+    height: 35px;
+    width: 300px;
+  }
+  input[type=submit] {
+    width: 100px;
+    height: 35px;
+    background: $main-green;
+    border: 2px solid $clear-white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: $clear-white;
+  }
+}
+
+/*footer etc.*/
+.bottom {
+  clear: left;
+  background-color: $main-dark-grey;
+  text-align: center;
+}
+
+.social {
+  padding: 20px;
+  .follow {
+    margin: 0 5px 0 5px;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: $main-green;
+    position: relative;
+    @include border-radius(50%);
+    @include transition(all, 0.25s, ease-in-out);
+    i {
+      font-size: 200%;
+      color: $main-dark-grey;
+      // center position an element
+      @include position(absolute, $top: 50%, $left: 50%);
+      @include translate(-50%, -50%);
+    }
+    &:hover {
+      @include scale(-1, 1);
+    }
+  }
+  p {
+    margin: 0;
+    padding: 10px;
+    color: $text-white;
+  }
+}
+
+.copyright {
+  background-color: $main-green;
+  p {
+    margin: 0;
+    padding: 10px;
+    color: $main-dark-grey;
+  }
+}

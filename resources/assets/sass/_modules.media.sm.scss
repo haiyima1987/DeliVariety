@@ -1,0 +1,66 @@
+@media only screen and (max-width: 992px) {
+  .mainText {
+    .introText {
+      width: 35%;
+      @include position(absolute, $top: 40%, $right: 55%);
+    }
+  }
+
+  .secondary {
+    h3 {
+      font-size: 1.5em;
+      margin: 0 auto;
+    }
+  }
+
+  .reserveForm {
+    .control-label {
+      text-align: right;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .mainText {
+    .introText {
+      width: 45%;
+    }
+  }
+
+  .secondary {
+    h3 {
+      font-size: 1.2em;
+      margin: 10px auto 0;
+    }
+    p {
+      margin: 0 auto;
+    }
+  }
+
+  .bigMenuItem {
+    height: 240px;
+    .bigMenuText {
+      @include position(absolute, $top: 30%);
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .btnRegister {
+    a {
+      height: 30px;
+      width: 100px;
+      padding: 5px;
+      font-size: 1em;
+    }
+  }
+
+  .contentWrapper {
+    padding: 15px;
+  }
+
+  .newsletter {
+    margin: 50px 0;
+  }
+}

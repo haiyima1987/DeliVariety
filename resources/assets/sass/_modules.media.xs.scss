@@ -1,0 +1,174 @@
+@media only screen and (max-width: 640px) {
+  .headerMenu {
+    height: 60px;
+    .logoMenu {
+      img {
+        height: 60px;
+      }
+    }
+  }
+
+  .btnMenu {
+    @include position(relative, $top: 10px);
+    font-size: 1.2em;
+    .labelMenu {
+      display: none;
+    }
+    i {
+      vertical-align: inherit;
+    }
+  }
+
+  .banner {
+    img {
+      height: 120px;
+    }
+    h5 {
+      font-size: 1.5em;
+    }
+  }
+
+  .mainText {
+    .introText {
+      width: 100%;
+      @include position(absolute, $top: 110px, $right: 0);
+      h1, h3 {
+        text-align: center;
+      }
+    }
+    #btnOrder {
+      @include position(absolute, $top: 75%, $right: 140px);
+    }
+  }
+
+  .btnGreen {
+    a {
+      height: 40px;
+      padding: 7px;
+    }
+  }
+
+  .carousel {
+    .slide {
+      img {
+        height: 320px;
+      }
+    }
+  }
+
+  .secondary {
+    h3 {
+      font-size: 1.2em;
+      margin: 10px auto 0;
+    }
+    p {
+      margin: 0 auto;
+    }
+  }
+
+  .bigMenuItem {
+    height: 320px;
+    width: 100%;
+    .bigMenuText {
+      @include position(absolute, $top: 30%);
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .btnRegister {
+    display: none;
+  }
+
+  .contentWrapper {
+    padding: 20px 10px 20px 10px;
+  }
+
+  .signUpForm {
+    width: 100%;
+    margin: 0;
+  }
+
+  .overlay {
+    .navContainer {
+      width: 100%;
+    }
+    .btnClose {
+      width: 100%;
+      margin: 0;
+    }
+    .btnRegOverlay {
+      display: block;
+    }
+    .navbar {
+      margin: 0;
+    }
+  }
+
+  .pageDot {
+    display: none;
+  }
+
+  .carouselBtns {
+    display: none;
+  }
+
+  .orderList {
+    @include position(fixed, $top: 80px);
+    width: 25%;
+    max-height: 360px;
+  }
+
+  .orderListLogo {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mainText {
+    .introText {
+      @include position(absolute, $top: 80px, $right: 0);
+      h1 {
+        font-size: 2em;
+      }
+      h3 {
+        display: none;
+      }
+    }
+    #btnOrder {
+      @include position(absolute, $top: 75%, $right: 130px);
+    }
+  }
+
+  .banner {
+    h5 {
+      font-size: 1.2em;
+    }
+  }
+
+  .carousel {
+    .slide {
+      img {
+        height: 240px;
+      }
+    }
+  }
+
+  #reserveSuccess {
+    padding: 0;
+    & > div {
+      padding: 0;
+    }
+  }
+
+  .orderList {
+    width: 30%;
+  }
+
+  .payBox {
+    table > tbody > tr > td {
+      padding: 2px;
+    }
+  }
+}

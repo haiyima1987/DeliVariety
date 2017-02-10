@@ -1,0 +1,81 @@
+/*contact page*/
+.contactInfo p, .contactInfo h3 {
+  text-align: left;
+  padding: 5px 40px;
+  margin: 0;
+}
+
+.contactInfo img {
+  width: 15%;
+}
+
+.contactInfo .socialLink {
+  display: flex;
+}
+
+.contactInfo .socialLink p {
+  width: 140px;
+}
+
+/*reservation page*/
+.tableOverview {
+  @extend .menuCategory;
+  background: $clear-white;
+  border: none;
+  margin-top: 10px;
+  padding: 0;
+  @include border-radius(5px);
+  @include box-shadow(5px, 5px, 15px, $shadow-grey);
+  h3 {
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+  }
+  .spot {
+    padding: 10px;
+    img {
+      border: none;
+      background: transparent;
+    }
+  }
+  .available {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .reserveInfo {
+    padding: 15px;
+  }
+}
+
+.errorBox {
+  display: none;
+  margin: 5px;
+  padding: 30px 10px 5px;
+  i {
+    @include position(absolute, $top: 5px, $right: 5px);
+    font-size: 1.5em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.reserveForm {
+  .control-label {
+    text-align: left;
+  }
+}
+
+.topDownMap img {
+  width: 100%;
+}
+
+// reservation tables
+.seatingElement {
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    width: 100%;
+  }
+}
